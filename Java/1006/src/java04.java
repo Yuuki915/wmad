@@ -1,12 +1,10 @@
 import java.util.Scanner;
 
-import javax.swing.text.FieldView;
-
 // echoSquare
 
 public class java04 {
     public static void main(String[] args) {
-        
+
         Scanner scan = new Scanner(System.in);
         int num, square;
 
@@ -16,6 +14,8 @@ public class java04 {
         square = num * num;
 
         System.out.println("The square of" + num + "is" + square);
+
+        scan.close();
     }
 }
 

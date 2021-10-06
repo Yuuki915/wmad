@@ -1,8 +1,9 @@
 import java.util.Scanner;
+
 // echo
 
 public class java03 {
-    
+
     public static void main(String[] args) {
 
         String inData;
@@ -12,6 +13,7 @@ public class java03 {
         inData = scan.nextLine();
 
         System.out.println(inData);
-        
+
+        scan.close();
     }
 }

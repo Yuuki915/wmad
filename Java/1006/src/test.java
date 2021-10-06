@@ -10,7 +10,7 @@ public class test {
 
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Enter somethin");
+        System.out.println("Enter something");
         str = scan.next();
 
         System.out.println(str);
@@ -20,6 +20,6 @@ public class test {
         
         System.out.println(str2);
 
-
+        scan.close();
     }
 }
