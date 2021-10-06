@@ -1,39 +1,44 @@
-import javax.swing.plaf.synth.SynthToolBarUI;
+import java.lang.ref.Cleaner;
+
+// import javax.swing.plaf.synth.SynthToolBarUI;
 
 // ArithmeticOperators
 public class java01 {
     public static void main(String[] args) {
 
-        short shortNum = 12; // 16bit
-        int result;          // 32bit
 
-        result = shotNum / 3;
-        System.out.println("Result:" + result);    // arithmetic will be done using 32bits
-        }
+        // -----
 
-        int i = 2 + 1;
-        System.out.println(i);
+        // short shortNum = 12; // 16bit
+        // int result;          // 32bit
 
-        String s = "2" + 1;
-        System.out.println(s);
+        // result = shortNum / 3;
+        // System.out.println("Result:" + result);    // arithmetic will be done using 32bits
+        
 
-        int z = 12 + 1;
-        z = 12 - 1;
-        z = 12 * 2;
-        z = 12 / 2;
-        System.out.println(z);
+        // int i = 2 + 1;
+        // System.out.println(i);
 
-        int mod = 13 % 2;
-        System.out.println(mod);
+        // String s = "2" + 1;
+        // System.out.println(s);
 
-        int mod1 = (int)12.5 % 2;
-        System.out.println(mod1);
+        // int z = 12 + 1;
+        // z = 12 - 1;
+        // z = 12 * 2;
+        // z = 12 / 2;
+        // System.out.println(z);
 
-        int increment = 10;
-        System.out.println("postfix:" + ++increment);
-        System.out.println("prefix:" + increment++);
+        // int mod = 13 % 2;
+        // System.out.println(mod);
 
-        System.out.println(-23 - 3);
+        // int mod1 = (int)12.5 % 2;
+        // System.out.println(mod1);
+
+        // int increment = 10;
+        // System.out.println("postfix:" + ++increment);
+        // System.out.println("prefix:" + increment++);
+
+        // System.out.println(-23 - 3);
 
 
 
@@ -61,5 +66,6 @@ public class java01 {
 
         // 99/100
         // = 0
+    }
 }
 
