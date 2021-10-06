@@ -1,4 +1,3 @@
-import javax.swing.plaf.synth.SynthToolBarUI;
 
 // ArithmeticOperators
 public class java01 {
@@ -7,9 +6,8 @@ public class java01 {
         short shortNum = 12; // 16bit
         int result;          // 32bit
 
-        result = shotNum / 3;
+        result = shortNum / 3;
         System.out.println("Result:" + result);    // arithmetic will be done using 32bits
-        }
 
         int i = 2 + 1;
         System.out.println(i);
@@ -47,19 +45,19 @@ public class java01 {
 
 
         // calc in java
-        // (32.5 - 12) / 4.1
+        // (31.5 - 12) / 4.1
         // 7 / 4  // calc --> 1.75 ..... java --> 1
         // 199 / 50 = 3 // in java
-        
+
         // 1.5 + 7/2
         // 1.5 + 3
         // = 4.5
-        
+
         // 1/2 + 1/2
         // 0 + 0
         // = 0
 
         // 99/100
         // = 0
+    }
 }
-
