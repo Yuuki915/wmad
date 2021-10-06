@@ -4,7 +4,7 @@ import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 public class java02{
 
-    public static void java01 (String[] args){
+    public class java01 (String[] args){
         int x = 4;
 
         if(x == 5){
