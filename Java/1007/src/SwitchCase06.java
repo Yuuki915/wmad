@@ -1,6 +1,6 @@
 // switch case
 
-public class java06 {
+public class SwitchCase06 {
     public static void main(String[] args) {
 
         String name = "John";

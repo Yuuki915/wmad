@@ -1,14 +1,14 @@
 // for loop
 
-public class java07 {
+public class forLoop07 {
     public static void main(String[] args) {
         
         for(int i = 1000; i >= 1; i--) {
-            System.out.println("Value of i:");
+            System.out.println("Value of i: ");
             System.out.println(i);
         }
 
-        int num = 7;
+        int num = 10;
         boolean isPrime = true;
 
         for(int i = 2; i < num/2; i++) {

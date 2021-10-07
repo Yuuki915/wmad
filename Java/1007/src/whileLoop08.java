@@ -1,6 +1,6 @@
 //while loop
 
-public class java08 {
+public class whileLoop08 {
     public static void main(String[] args) {
         
         int i = 1;

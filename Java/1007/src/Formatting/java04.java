@@ -16,7 +16,6 @@ public class java04 {
         System.out.printf("%-7s%7d%n", "Age =", age);
         System.out.printf("%-7s%7.2f%n", "GPA =", gpa);
 
-        
 
     }
 }

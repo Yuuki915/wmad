@@ -4,7 +4,7 @@ package Formatting;
 public class java03 {
 
     public static void main(String[] args) {
-        
+
         double num1 = 10.1223;
         double num2 = 12.3456789;
 

@@ -1,6 +1,6 @@
 // do while loop
 
-public class java09 {
+public class doWhileLoop09 {
     public static void main(String[] args) {
         
         int i = 11;
