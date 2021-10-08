@@ -5,11 +5,11 @@ public class conversionType01 {
     public static void main(String[] args) {
 
     // for integers
-    System.out.printf("%d%nm, 10");
+    System.out.printf("%d%nm", 10);
 
     // for float and double
-    System.out.printf("%f%n, 10.1");
-    System.out.printf("%f%n, 10.12345678");
+    System.out.printf("%f%n", 10.1);
+    System.out.printf("%f%n", 10.12345678);
 
     // for character
     System.out.printf("%c%n", 'a');
@@ -22,7 +22,7 @@ public class conversionType01 {
     // for boolean
     System.out.printf("%b%n", 5 < 4);
     System.out.printf("%B%n", 5 < 4);
-    System.out.printf("%b%n", null); // false
+    // System.out.printf("%b%n", null); // false
     System.out.printf("%b%n", "cat"); // defaults to true
 
     // scientific notation
@@ -51,7 +51,7 @@ public class conversionType01 {
 
     System.out.printf("%n");
     System.out.printf("\n");
-    System.out.printf("%t");
+    // System.out.printf("%t"); // error
     System.out.printf("%%");
 
     }
