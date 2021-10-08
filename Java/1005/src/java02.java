@@ -1,20 +1,28 @@
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 // making decision
 
 public class java02{
 
-    public class java01 (String[] args){
+    public static void main (String[] args){
+
         int x = 4;
 
-        if(x == 5){
+//        if(x == 5){
+//            System.out.println("Value of x is 5");
+//        } else {
+//            System.out.println("Value of x is not 5");
+//        }
+
+        if(x != 5) {
             System.out.println("Value of x is 5");
         } else {
             System.out.println("Value of x is not 5");
         }
 
+
         int y = 6, z = 7;
-        if(4 < 5){
+
+        if(4 < 5) {
             System.out.println("true");
         } else {
             System.out.println("false");
@@ -37,7 +45,7 @@ public class java02{
         }
 
         boolean m = true;
-        boolean n = false;
+        boolean n = true;
 
         if(m || n) {
             System.out.println("Condition is TRUE");
@@ -45,14 +53,15 @@ public class java02{
             System.out.println("Condition is FALSE");
         }
 
+
         // if..else
-        int b = 5;
+        int b = 2;
 
         if(b == 5) {
             System.out.println("B equals to 5");
         } else if(b > 5) {
             System.out.println("B is greater than 5");
-        } else if(b > 5) {
+        } else {
             System.out.println("B is smaller than 5");
         }
 
