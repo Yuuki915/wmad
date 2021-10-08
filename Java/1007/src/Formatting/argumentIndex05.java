@@ -1,7 +1,7 @@
 package Formatting;
 
 // Argument index
-public class java05 {
+public class argumentIndex05 {
     public static void main(String[] args) {
         
         System.out.printf("%s%s%s%n", "1", "2", "3");

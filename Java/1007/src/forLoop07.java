@@ -17,7 +17,7 @@ public class forLoop07 {
             }
         }
 
-        for(isPrime == true) {
+        if(isPrime == true) {
             System.out.println("The number is a prime number");
         } else {
             System.out.println("The number is not a prime number");

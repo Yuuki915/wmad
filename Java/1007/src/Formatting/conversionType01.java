@@ -1,7 +1,7 @@
 package Formatting;
 
 // Conversion type
-public class java01 {
+public class conversionType01 {
     public static void main(String[] args) {
 
     // for integers
@@ -22,7 +22,7 @@ public class java01 {
     // for boolean
     System.out.printf("%b%n", 5 < 4);
     System.out.printf("%B%n", 5 < 4);
-    System.out.printf("%b%n", null);
+    System.out.printf("%b%n", null); // false
     System.out.printf("%b%n", "cat"); // defaults to true
 
     // scientific notation

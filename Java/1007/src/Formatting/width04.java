@@ -1,7 +1,7 @@
 package Formatting;
 
 // Width
-public class java04 {
+public class width04 {
     public static void main(String[] args) {
 
         System.out.printf("%8d%n", 123);

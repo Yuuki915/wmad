@@ -1,4 +1,4 @@
-import java.util.Iterator;
+// import java.util.Iterator;
 
 // break and continue
 public class breakAndContinue10 {
@@ -7,7 +7,7 @@ public class breakAndContinue10 {
         for(int i = 1; i < 10; i++) {
             if(i == 5) {
                 break;
-                continue;
+                // continue;
             }
             System.out.println(i);
         }

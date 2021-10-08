@@ -1,11 +1,11 @@
 package Formatting;
 
 // Composition of printf
-public class java03 {
+public class compositionOfPrintf03 {
 
     public static void main(String[] args) {
 
-        double num1 = 10.1223;
+        // double num1 = 10.1223;
         double num2 = 12.3456789;
 
         System.out.printf("%f%n, num1"); // defaults to 6 decimal places
@@ -21,8 +21,8 @@ public class java03 {
         System.out.printf("%.8f%n", num2);
 
         String str = "hello";
-        int num3 = 15;
-        char let = 'A';
+        // int num3 = 15;
+        // char let = 'A';
 
         System.out.printf("%.2s%n", str);
         System.out.printf("%.3b%n", true);
