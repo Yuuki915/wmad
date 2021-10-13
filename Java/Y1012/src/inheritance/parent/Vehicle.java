@@ -1,4 +1,4 @@
-package com.inheritance.parent;
+package  inheritance.parent;
 
 public class Vehicle {
 
