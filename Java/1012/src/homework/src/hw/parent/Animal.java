@@ -1,4 +1,4 @@
-package ;
+package hw.parent;
 
 
 public class Animal {
