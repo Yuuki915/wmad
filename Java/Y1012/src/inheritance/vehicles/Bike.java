@@ -1,6 +1,6 @@
-package com.inherirance.vehicle;
+package inheritance.vehicles;
 
-import com.inheritance.parent.Vehicle;
+import inheritance.parent.Vehicle;
 
 
 public class Bike extends Vehicle {

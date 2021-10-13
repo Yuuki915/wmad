@@ -1,5 +1,4 @@
 package com.inheritence;
-
 import com.inheritance.vehicles.Bike;
 
 public class Main {
