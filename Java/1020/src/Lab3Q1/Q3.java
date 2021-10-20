@@ -25,7 +25,6 @@ public class Q3 {
         model.add("Type3");
 
         ArrayList<Integer> year = new ArrayList<>();
-
         year.add(1990);
         year.add(1994);
         year.add(1991);
@@ -39,3 +38,4 @@ public class Q3 {
     }
 
 }
+
