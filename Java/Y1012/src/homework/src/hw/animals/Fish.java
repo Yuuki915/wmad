@@ -1,6 +1,24 @@
 package Java.Y1012.src.homework.src.hw.animals;
 import Java.Y1012.src.homework.src.hw.parent.Animal;
 
+public class Fish{
+
+    protected boolean liveInWater;
+    protected boolean gills;
+
+    public Fish() {
+        animalType = "Fish";
+        this.liveInWater = true;
+        this.gills = true;
+    }
+
+    public String ShowInfo() {
+        
+    }
+
+}
+
+
 
 public class Fish extends Animal{
 
