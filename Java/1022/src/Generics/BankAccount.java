@@ -39,11 +39,9 @@ public class BankAccount<s1, s2> {
     }
 
     void withdraw(int amount) {
-        if (amount > 0 && balance > 0) {
+        if (amount >= 0 && balance > 0 && amount < balance) {
             balance = balance - amount;
             previousTransaction = -amount;
-        } else if (amount > balance) {
-            errorMessage("You took more than your balance");
         } else {
             if (amount <= 0) {
                 errorMessage("Invarid amount! Please enter correct amount");
