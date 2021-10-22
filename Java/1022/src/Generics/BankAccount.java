@@ -1,10 +1,11 @@
 package Generics;
+
 import java.util.Scanner;
 
 import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 public class BankAccount<s1, s2> {
-    
+
     int balance;
     int previousTransaction;
     private final s1 customerName;
@@ -18,16 +19,17 @@ public class BankAccount<s1, s2> {
     public s1 getCustomerName() {
         return customerName;
     }
+
     public s2 getCustomerId() {
         return customerId;
     }
 
     void deposit(int amount) {
-        if(amount >= 0) {
+        if (amount >= 0) {
             balance = balance + amount;
             previousTransaction = amount;
         } else {
-            if(amount <= 0) {
+            if (amount <= 0) {
                 errorMessage("Invarid amount! Please enter correct amount");
             } else {
                 errorMessage("Invarid amount! Please enter correct amount");
@@ -37,13 +39,13 @@ public class BankAccount<s1, s2> {
     }
 
     void withdraw(int amount) {
-        if(amount > 0 && balance > 0) {
+        if (amount > 0 && balance > 0) {
             balance = balance - amount;
             previousTransaction = -amount;
-        } else if(amount > balance) {
+        } else if (amount > balance) {
             errorMessage("You took more than your balance");
         } else {
-            if(amount <= 0) {
+            if (amount <= 0) {
                 errorMessage("Invarid amount! Please enter correct amount");
             } else {
                 errorMessage("Insufficient Balanse");
@@ -53,9 +55,9 @@ public class BankAccount<s1, s2> {
     }
 
     void getPreviousTransaction() {
-        if(previousTransaction > 0) {
+        if (previousTransaction > 0) {
             System.out.println("Deposited: $" + previousTransaction);
-        } else if(previousTransaction < 0) {
+        } else if (previousTransaction < 0) {
             System.out.println("Withdraw: $" + Math.abs(previousTransaction)); // withdraw: $-amount
         } else {
             System.out.println("No transaction occured");
@@ -84,32 +86,32 @@ public class BankAccount<s1, s2> {
             System.out.println("C: Withdraw");
             System.out.println("D: Previous Transaction");
             System.out.println("E: Quit");
-            option =scanner.next().charAt(0); // [a]sdasdsfas
+            option = scanner.next().charAt(0); // [a]sdasdsfas
             System.out.println("\n");
 
-            switch(Character.toLowerCase(option)) {
-                case 'a': 
-                    System.out.println("---------------");
-                    System.out.println("Balance = $" + balance);
-                    System.out.println("---------------");
-                    System.out.println("\n");
-                    break;
+            switch (Character.toLowerCase(option)) {
+            case 'a':
+                System.out.println("---------------");
+                System.out.println("Balance = $" + balance);
+                System.out.println("---------------");
+                System.out.println("\n");
+                break;
 
-                case 'b':
-                    System.out.println("---------------");
-                    System.out.println("Enter an amount to deposit");
-                    System.out.println("---------------");
+            case 'b':
+                System.out.println("---------------");
+                System.out.println("Enter an amount to deposit");
+                System.out.println("---------------");
 
-                    try {
-                        int amount = scanner.nextInt();
-                        deposit(amount);
-                    } catch (Exception e) {
-                        errorMessage("Wrong Input! Only integer numbers please...");
-                        // scanner.nextLine();
-                    }
-                    break;
+                try {
+                    int amount = scanner.nextInt();
+                    deposit(amount);
+                } catch (Exception e) {
+                    errorMessage("Wrong Input! Only integer numbers please...");
+                    // scanner.nextLine();
+                }
+                break;
 
-                case 'c':
+            case 'c':
                 System.out.println("---------------");
                 System.out.println("Enter an amount to withdraw");
                 System.out.println("---------------");
@@ -123,24 +125,22 @@ public class BankAccount<s1, s2> {
                 }
                 break;
 
-                case 'd':
+            case 'd':
                 System.out.println("---------------");
                 getPreviousTransaction();
                 System.out.println("---------------");
                 break;
 
-                case 'e':
+            case 'e':
                 System.out.println("===============");
                 break;
-            
-                default:
+
+            default:
                 System.out.println("Invalid Option. Please try again.");
                 break;
             }
-            
-            
 
-        } while(option != 'E');
+        } while (option != 'E');
         System.out.println("Thank you for banking with us...");
         scanner.close();
     }
