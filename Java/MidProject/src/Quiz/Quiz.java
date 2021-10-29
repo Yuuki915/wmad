@@ -82,6 +82,9 @@ public class Quiz {
         if (score == 100) {
             System.out.println("You know me!!!");
             System.out.println("Let's grab some beer!!!");
+        } else if (numCor == 2) {
+            System.out.println("You'll know me soon!!!");
+            System.out.println("Let's grab some beer anyways!!!");
         } else {
             System.out.println("You need to know me more!!!");
             System.out.println("You'd better to grab some beer with me!!!");
