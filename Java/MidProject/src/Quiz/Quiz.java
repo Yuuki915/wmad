@@ -33,7 +33,7 @@ public class Quiz {
         }
 
         System.out.println("\n");
-        System.out.println("Question3");
+        System.out.println("Question2");
         System.out.println("Where am I from?");
         System.out.println("[1] Fukuoka");
         System.out.println("[2] Osaka");
@@ -53,7 +53,7 @@ public class Quiz {
         }
 
         System.out.println("\n");
-        System.out.println("Question2");
+        System.out.println("Question3");
         System.out.println("What's my favorite?");
         System.out.println("[1] eating");
         System.out.println("[2] sleeping");
