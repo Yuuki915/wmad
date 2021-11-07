@@ -1,0 +1,10 @@
+*.class
+.settings
+*/bin
+.project
+*pom.xml
+.classpath
+.vscode
+*/src/test
+*/target
+.DS_Store
