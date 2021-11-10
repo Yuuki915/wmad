@@ -50,12 +50,4 @@ public class Employee {
         this.email = email;
     }
 
-    public long getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(long employeeId) {
-        this.employeeId = employeeId;
-    }
-
 }
