@@ -1,5 +1,7 @@
 package com.spring.pma.controller;
 
+import java.util.List;
+
 import com.spring.pma.dao.iEmployeeRepository;
 import com.spring.pma.entity.Employee;
 
@@ -17,18 +19,23 @@ public class EmployeeController {
     @Autowired
     iEmployeeRepository empRepo;
 
-    // @RequestMapping("/new")
-    @GetMapping("/new")
-    public String displayProjectForm(Model model) {
-        model.addAttribute("employee", new Employee());
-        return "employees/new-employee";
+    @GetMapping
+    public String displayEmployees(Model model) {
+        List<Employee> employees = empRepo.findAll();
+        model.addAttribute("employeeList", employees);
+
+        return "employees/list-employees";
     }
 
-    // @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @GetMapping("/new")
+    public String displayEmployeeForm(Model model) {
+        model.addAttribute("employee", new Employee());
+        return "/employees/new-employee";
+    }
+
     @PostMapping("/save")
-    public String createProject(Employee employee, Model model) {
-        // this is where we save to database
+    public String createEmployee(Employee employee, Model model) {
         empRepo.save(employee);
-        return "redirect:/employees/new";
+        return "redirect:/employees";
     }
 }
