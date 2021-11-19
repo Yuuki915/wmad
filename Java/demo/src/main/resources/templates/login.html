@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Lynx-Shopsite</title>
+    <link th:href="@{/css/login.css}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Josefin+Sans:ital,wght@1,100&family=Josefin+Slab:ital,wght@0,100;1,100&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <form th:action="@{/login_result}" th:object="${loginForm}" method="post">
+        <p th:text="${message}"></p>
+        <div class="yourid">
+          <input class="idfield" type="text" placeholder="ID" th:field="*{id}" />
+        </div>
+        <br />
+        <div class="yourname">
+          <input class="namefield" type="text" placeholder="Name" th:field="*{name}" />
+        </div>
+        <br />
+        <div class="loginbtn">
+          <input class="btn" type="submit" value="LOGIN" />
+        </div>
+        <br />
+      </form>
+    </div>
+
+
+
+
+  </body>
+</html>
