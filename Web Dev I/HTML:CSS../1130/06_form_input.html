@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="05_tables.html" method="post">
+        <!-- Text -->
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" required>
+        </div>
+        <!-- Email -->
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+        </div>
+        <!-- Select -->
+        <div>
+            <label for="gender">Gender</label>
+            <select name="gender" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <!-- Number -->
+        <div>
+            <label for="age">Age</label>
+            <input type="number" name="age" id="age">
+        </div>
+        <!-- Date  -->
+        <div>
+            <label for="birthdate">Birthdate</label>
+            <input type="date" name="birthdate" id="birthdate">
+        </div>
+        <!-- Radio -->
+        <div>
+            <label for="manbership">Menbership</label>
+            <input type="radio" name="membership" id="membership" value="simple"> Simple
+            <input type="radio" name="membership" id="membership" value="standard"> Standard
+            <input type="radio" name="membership" id="membership" value="super"> Super
+        </div>
+        <!-- Checkbox -->
+        <div>
+            <label for="links">Links</label>
+            <input type="checkbox" name="links" id="links" value="bike"> Bike
+            <input type="checkbox" name="links" id="links" value="car"> Car
+            <input type="checkbox" name="links" id="links" value="yacht"> Yacht
+
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
