@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backgrounds & Borders</title>
+
+    <style>
+        #box-1{
+            background-color: blanchedalmond;
+            border-width: 3px;
+            border-style: solid;
+            border-color: red;
+            border: 5px dotted gray;    /* 後に来た方が優先 */
+            border-radius: 10px;
+        }
+        #box-2{
+            background-color: #333;
+            color: #fff;
+            border-top: blue;
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        #box-3{
+            background-image: url(./img);
+            background-repeat: no-repeat;
+            background-position: 50px 50pxb;
+            background-size: cover;
+
+            background: url(./img) no-repeat center bottom/cover;
+            color: aqua;
+            height: 300px;
+        }
+        #box-4{
+            background: url(./img) no-repeat center bottom;
+        }
+    </style>
+</head>
+<body>
+    <div id="box-1">
+        <h3>Box 1</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora repellendus aut amet voluptatem dolor, ipsum quasi veniam? Accusamus quasi distinctio placeat perspiciatis, illum itaque et? Pariatur iste facere consequuntur tempore.
+        </p>
+    </div>
+    <div id="box-2">
+        <h3>Box 2</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora repellendus aut amet voluptatem dolor, ipsum quasi veniam? Accusamus quasi distinctio placeat perspiciatis, illum itaque et? Pariatur iste facere consequuntur tempore.
+        </p>
+    </div>
+    <div id="box-3">
+        <h3>Box 3</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora repellendus aut amet voluptatem dolor, ipsum quasi veniam? Accusamus quasi distinctio placeat perspiciatis, illum itaque et? Pariatur iste facere consequuntur tempore.
+        </p>
+    </div>
+    <div id="box-4">
+        <h3>Box 4</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora repellendus aut amet voluptatem dolor, ipsum quasi veniam? Accusamus quasi distinctio placeat perspiciatis, illum itaque et? Pariatur iste facere consequuntur tempore.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora repellendus aut amet voluptatem dolor, ipsum quasi veniam? Accusamus quasi distinctio placeat perspiciatis, illum itaque et? Pariatur iste facere consequuntur tempore.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora repellendus aut amet voluptatem dolor, ipsum quasi veniam? Accusamus quasi distinctio placeat perspiciatis, illum itaque et? Pariatur iste facere consequuntur tempore.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora repellendus aut amet voluptatem dolor, ipsum quasi veniam? Accusamus quasi distinctio placeat perspiciatis, illum itaque et? Pariatur iste facere consequuntur tempore.
+        </p>
+    </div>
+</body>
+</html>
