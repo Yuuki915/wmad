@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* width: 100%; */
+  box-sizing: border-box;
+}
+.hero-img {
+  height: 60vh;
+  border: 2px solid #333;
+}
+.graph {
+  height: 25rem;
+  border: 2px solid #333;
+}
+.js {
+  height: 20rem;
+  border: 2px solid #333;
+  margin: 2rem;
+  border-radius: 20px;
+}
+.py {
+  height: 20rem;
+  border: 2px solid #333;
+  margin: 2rem;
+  border-radius: 20px;
+}
+.sql {
+  height: 20rem;
+  border: 2px solid #333;
+  margin: 2rem;
+  border-radius: 20px;
+}
+.java {
+  height: 20rem;
+  border: 2px solid #333;
+  margin: 2rem;
+  border-radius: 20px;
+}
+.node {
+  height: 20rem;
+  border: 2px solid #333;
+  margin: 2rem;
+  border-radius: 20px;
+}
+.ts {
+  height: 20rem;
+  border: 2px solid #333;
+  margin: 2rem;
+  border-radius: 20px;
+}
+
+footer {
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .hero-img {
+    height: 20rem;
+    border: 2px solid #333;
+  }
+  .graph {
+    height: 25rem;
+    border: 2px solid #333;
+  }
+  .js {
+    height: 10rem;
+    border: 2px solid #333;
+    margin: 2rem;
+    border-radius: 10px;
+  }
+  .py {
+    height: 10rem;
+    border: 2px solid #333;
+    margin: 2rem;
+    border-radius: 10px;
+  }
+  .sql {
+    height: 10rem;
+    border: 2px solid #333;
+    margin: 2rem;
+    border-radius: 10px;
+  }
+  .java {
+    height: 10rem;
+    border: 2px solid #333;
+    margin: 2rem;
+    border-radius: 10px;
+  }
+  .node {
+    height: 10rem;
+    border: 2px solid #333;
+    margin: 2rem;
+    border-radius: 10px;
+  }
+  .ts {
+    height: 10rem;
+    border: 2px solid #333;
+    margin: 2rem;
+    border-radius: 10px;
+  }
+}
