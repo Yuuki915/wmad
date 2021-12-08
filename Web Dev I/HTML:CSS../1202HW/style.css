@@ -228,6 +228,7 @@ p {
   }
   #navbar ul li a {
     padding: 3px;
+    border-bottom: 1px dotted #444;
   }
 
   /* Showcase */
