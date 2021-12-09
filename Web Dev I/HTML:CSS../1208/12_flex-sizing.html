@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex sizing</title>
+    <style>
+        :root{
+            box-sizing: border-box;
+        }
+        .container{
+            background-color: darkslategray;
+            /* width: 20rem; */
+            padding: 1rem;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .item{
+            font-size: 2rem;
+            line-height: 1;
+            text-align: center;
+            width: 20rem;
+            padding: 2rem 1rem;
+            background-color: #e2f0ef;
+            border: 3px solid #51aaa3;
+            margin: .5rem;
+
+            /* flex-grow: 1; */
+            /* flex-shrink: 1; */
+        }
+
+        .item-1{
+            /* flex-grow: 3; */
+            /* flex-shrink: 1; */
+            /* flex-basis: 5rem; */
+
+            /* glow | shrink | basis */
+            flex: 0 1 auto;
+
+            /* one relative value: flex-glow */
+            flex: 1;
+
+            /* one absolute value: flex-basis */
+            flex: 20rem;
+            flex: 50px;
+
+            /* one relative and absolute value: flex-glow | flex-basis */
+            flex: 1 2;
+
+            /* two relative values: flex-glow | flex-shrink */
+            flex: 1 2;
+
+            /* fully inflexible layout: flex: 0 0 auto */
+            flex: none;
+        }
+        .item-2{
+            /* flex-grow: 2; */
+            /* flex-shrink: 1; */
+            /* flex-basis: 10rem; */
+        }
+        .item-3{
+            /* flex-grow: 5; */
+            /* flex-shrink: 2; */
+            /* flex-basis: 30rem; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+
+    </div>
+</body>
+</html>

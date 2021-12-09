@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS variables</title>
+    <style>
+        :root{
+            --light-color: #f4f4f4;
+            --container-max: 100%;
+        }
+        header{
+            --headder-bg-color: #333;
+            --header-txt-color: #fff;
+            --header-txt-align: center;
+        }
+
+        .box{
+            --box-bg-color: steelblue;
+            --box-txt-color: #fff;
+            --box-1-width: 45%;
+            --box-2-width: 45%;
+            --box-syadow-h-offset: 10px;
+            --box-syadow-v-offset: 5px;
+            --box-shadow-blur: 5px;
+            --box-shadow-color: #ccc;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            line-height: 1.4;
+            background-color: var(--light-color);
+        }
+
+        header{
+            background-color: var(--headder-bg-color);
+            color: var(--header-txt-color);
+            text-align: var(--header-txt-align);
+        }
+
+        .container{
+            max-width: var(--container-max);
+        }
+        .box{
+            display: inline-block;
+            padding: 1rem;
+            background-color: var(--box-bg-color);
+            color: var(--box-txt-color);
+            margin: 1rem;
+            box-shadow: var(--box-shadow-h-offset) var(--box-syadow-v-offset) var(--box-shadow-blur) var(--box-bg-color);
+        }
+        .box-1{
+            width: var(--box-1-width);
+        }
+        .box-2{
+            width: var(--box-2-width);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Variables</h1>
+    </header>
+
+    <div class="container">
+        <div class="box box-1">
+            <h1>Hello</h1>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi necessitatibus nobis repellendus laboriosam rerum expedita, cumque, nemo accusantium enim exercitationem consequatur? Obcaecati facere quis vitae esse, fugiat omnis dolorem nihil.
+            </p>
+        </div>
+        <div class="box box-2">
+            <h1>Hello</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam eaque non earum laborum autem corrupti rem minima totam! Eaque, reprehenderit ullam vero rem dolorum nostrum quas explicabo ratione quam beatae!
+            </p>
+        </div>
+    </div>
+</body>
+</html>

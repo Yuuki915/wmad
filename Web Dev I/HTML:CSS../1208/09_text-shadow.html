@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text shadow</title>
+    <style>
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 5rem;
+        }
+
+        .box{
+            font-size: 5rem;
+            background-color: antiquewhite;
+           text-shadow: .2rem .2rem steelblue;
+        }
+        .a{
+           /* h-shadow | v-shadow | color */
+           text-shadow: .2rem .2rem steelblue;
+        }
+        .b{
+            /* h-shadow | v-shadow | color */
+           text-shadow: .4rem .4rem .7rem steelblue;
+        }
+        .c{
+            /* white text */
+            color: #fff;
+            text-shadow: .4rem .4rem 1rem steelblue;
+        }
+        .d{
+            /* negative values */
+            text-shadow: -.4rem -.4rem 1rem steelblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Hi</div>
+    <h1 class="a">Welcome!</h1>
+    <h1 class="b">Welcome!</h1>
+    <h1 class="c">Welcome!</h1>
+    <h1 class="d">Welcome!</h1>
+
+</body>
+</html>
