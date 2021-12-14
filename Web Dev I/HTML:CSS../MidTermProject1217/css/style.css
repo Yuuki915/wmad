@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* header */
+header {
+  z-index: 999;
+  position: sticky;
+  top: 0;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem;
+}
+header nav ul li {
+  padding: 1rem;
+}
+
+.hero {
+  width: 100%;
+  height: 60vh;
+}
+
+#yukihand {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 90; /*線の太さを指定する*/
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 1500; /* 線の間隔を指定する */
+  stroke-dashoffset: 1500; /* 線の位置を指定する */
+}
+/* main */
+
+.content-bar {
+  /* z-index: -1; */
+  /* position: relative;
+  top: 50%;
+  right: 1rem; */
+  align-items: center;
+  margin: 1rem;
+
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translate(-0.5rem, -50%);
+}
+.content-bar .cercle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.01);
+  box-shadow: 0 0 0 1px #666;
+  margin: 0 0.5rem 0 auto;
+}
+.content-bar p {
+  color: #666;
+  margin: 1rem 0;
+  writing-mode: vertical-lr;
+  text-orientation: sideways;
+  margin: 1rem 1rem 1rem auto;
+  letter-spacing: 3px;
+  font-size: 13;
+}
+
+#about,
+#news,
+#shopping,
+#categories,
+#activities {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+#about {
+  background: url("../image/about-img1.png") no-repeat 80% 50%;
+  background-size: 70% 90%;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: lighten;
+}
+
+.about-text {
+}
+
+#news {
+}
+
+/* footer */
+.f-menu {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  font-size: 15px;
+}
+.logo {
+  margin: auto 0;
+  font-size: 20px;
+}
+.f-menu ul li {
+  padding: 0.25rem;
+}
+.copy {
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 1.5rem;
+  color: #fff;
+  background-color: #555;
+}
+
+/* ---------- */
+
+/* tablet */
+@media (max-width: 890px) {
+  /* humberger menu */
+  #humberger {
+    opacity: 0;
+    position: fixed;
+  }
+  label .lines {
+    position: fixed;
+    top: 1.3rem;
+    right: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+  .line1 {
+    position: absolute;
+    right: 0;
+    width: 1.5rem;
+    height: 0.15rem;
+    background-color: #333;
+    transition: all 0.5s;
+  }
+  .line2 {
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
+    width: 1rem;
+    height: 0.15rem;
+    background-color: #333;
+    transition: all 0.5s;
+  }
+  #menu {
+    margin-top: 3rem;
+    position: fixed;
+    top: -650px;
+    transition: all 1s;
+    width: 100%;
+  }
+  #menu a {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+  }
+  .lines:hover {
+    cursor: pointer;
+  }
+  #humberger:checked ~ #menu {
+    top: 0;
+  }
+  #humberger:checked + label .lines .line1 {
+    top: 10%;
+    width: 80%;
+    transform: rotate(-45deg);
+  }
+  #humberger:checked + label .lines .line2 {
+    top: 10%;
+    width: 80%;
+    transform: rotate(45deg);
+  }
+  #humberger:checked ~ .light-dark {
+    background-color: #333;
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
+#about {
+}
+.about-text {
+}
+.about-text p {
+}
+
+/* smafo */
+@media (max-width: 500px) {
+}
