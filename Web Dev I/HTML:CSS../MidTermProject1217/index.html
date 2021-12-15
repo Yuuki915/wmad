@@ -4,83 +4,136 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yukihand</title>
+    <title>YuukiHand</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header>
-        
-        <input type="checkbox" id="humberger">
-        <label for="humberger">
-            <div class="lines">
-                <span class="line1"></span>
-                <span class="line2"></span>
+        <div class="navbar">
+            <input type="checkbox" id="humberger">
+            <label for="humberger">
+                <div class="lines">
+                    <span class="line1"></span>
+                    <span class="line2"></span>
+                </div>
+            </label>
+            <label class="light-dark" for="humberger"></label>
+            
+            <div id="menu">
+                <a href="#about">About</a>
+                <a href="#news">News</a>
+                <a href="#shopping">Shopping</a>
+                <a href="#categories">Categories</a>
+                <a href="#activities">Activities</a>
             </div>
-        </label>
-        <label class="light-dark" for="humberger"></label>
-        
-        <div id="menu">
-            <a href="#about">About</a>
-            <a href="#news">News</a>
-            <a href="#shopping">Shopping</a>
-            <a href="#categories">Categories</a>
-            <a href="#activities">Activities</a>
         </div>
     
-        <div class="logo">
-            yukihand
-        </div>
-        <div class="hero">
-            <img src="" alt="heroimg">
+        <div class="hero-container">
+            <div class="logo">
+                YuukiHand
+            </div>
+            <div class="hero">
+                <img src="./image/hero3.jpg" alt="heroimg">
+            </div>
         </div>
     </header>
 
     <main>
-        <section id="about">
-            <div class="content-bar">
-                <div class="cercle"></div>
-                <p>About</p>
-            </div>
-            <div class="about-text">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, quia voluptatem. Dolor, delectus. Voluptatibus ex, rem saepe possimus corporis consequuntur provident nemo sit tempora cumque perferendis consequatur, explicabo architecto maiores.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores minus modi eum debitis tempora obcaecati, hic delectus nesciunt eos quasi nobis ipsam perferendis perspiciatis maxime unde sapiente qui iste!
-                </p>
-            </div>
-        </section>
-        
         <section id="news">
             <div class="content-bar">
                 <div class="cercle"></div>
+                <p class="dash"></p>
                 <p>News</p>
             </div>
+
+            <div class="news-slide">
+                <div class="one">
+                    <div class="news-img">
+                        <img src="./image/news1.jpg" alt="">
+                    </div>
+                    <p>
+                        <span>Day 1</span>
+                        <br>
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur maxime officiis, consequatur non provident itaque eaque praesentium sit suscipit corrupti reiciendis ut. Temporibus cum, at dolores fugit qui corporis.</span>
+                    </p>
+                </div>
+                <div class="list">
+                    <a class="link news-link" href="#"><p class="a-text">News List<span class="arrow">>></span></p></a>
+                </div>
+            </div>
         </section>
+       
+        <section id="about">
+            <div class="about-contain">
+                <div class="content-bar">
+                    <div class="cercle"></div>
+                    <p class="dash"></p>
+                    <p>About</p>
+                </div>
+                <div class="text-content">
+                    <div class="about-texts">
+                        <p class="about-p">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, quia voluptatem. Dolor, delectus. Voluptatibus ex, rem saepe possimus corporis consequuntur provident nemo sit tempora cumque perferendis consequatur, explicabo architecto maiores.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores minus modi eum debitis tempora obcaecati, hic delectus nesciunt eos quasi nobis ipsam perferendis perspiciatis maxime unde sapiente qui iste!
+                        </p>
+                        <h2>Yuuki</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         
         <section id="shopping">
             <div class="content-bar">
                 <div class="cercle"></div>
+                <p class="dash"></p>
                 <p>Shopping</p>
             </div>
-        </section>
-        
-        <section id="categories">
-            <div class="content-bar">
-                <div class="cercle"></div>
-                <p>Categories</p>
+
+            <div class="shop-container">
+                <div class="explain-items">
+                    <div class="shop-img">
+                        <img src="./image/shopitem.jpg" alt="shoppingimg">
+                    </div>
+                    <div class="shop-texts">
+                        <p>
+                            海で拾ったプラゴミや貝殻で作っています
+                        </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore et, neque magni reiciendis repudiandae sapiente culpa consectetur voluptates! Est perspiciatis cumque praesentium et veniam fugit reprehenderit, quos ipsa molestiae quia.</p>
+                    </div>
+                </div>
+
+                <div class="shop-imgs">
+                    <img src="./image/shop1.jpg" alt="">
+                    <img src="./image/shop2.jpg" alt="">
+                    <img src="./image/shop3.jpg" alt="">
+                </div>
+                <div class="list">
+                    <a class="link shop-link" href="#"><p class="a-text">Shopping List<span class="arrow">>></span></p></a>
+                </div>
             </div>
+
         </section>
 
         <section id="activities">
             <div class="content-bar">
                 <div class="cercle"></div>
+                <p class="dash"></p>
                 <p>Activities</p>
+            </div>
+
+            <div class="act-container">
+                
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam aspernatur autem nobis maiores fuga quae ut aliquid tempora perferendis repellendus earum beatae dolores dolor deserunt, modi impedit alias accusantium labore!
+                </p>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="f-menu">
-            <div class="logo">yukihand</div>
+            <div class="logo">YuukiHand</div>
             <ul>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Shopping</a></li>

@@ -4,6 +4,10 @@
   box-sizing: border-box;
   color: #333;
 }
+body {
+  width: 100vw;
+  height: 100vh;
+}
 li {
   list-style: none;
 }
@@ -13,26 +17,59 @@ a {
 img {
   width: 100%;
   height: auto;
+  vertical-align: top;
 }
 
 /* header */
-header {
+.navbar {
   z-index: 999;
-  position: sticky;
-  top: 0;
+  /* position: fixed; */
 }
-header nav ul {
+#humberger {
+  opacity: 0;
+  position: fixed;
+}
+#menu {
+  width: 100vw;
   display: flex;
-  justify-content: space-around;
-  margin: 1rem;
+  justify-content: right;
+  padding: 0.5rem;
+  background-color: #a7cbd9c4;
 }
-header nav ul li {
+#menu a {
+  color: #fff;
   padding: 1rem;
 }
 
+.hero-container {
+  width: 100vw;
+  position: relative;
+}
+
 .hero {
+  display: inline-block;
+  position: relative;
+  object-fit: contain;
+  width: 70%;
+  height: auto;
+  opacity: 0.8;
+}
+.hero::after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 0;
+  left: 0%;
   width: 100%;
-  height: 60vh;
+  height: 100%;
+  background-color: rgba(153, 153, 153, 0);
+  box-shadow: inset -180px 0 300px #fff;
+}
+.hero-container .logo {
+  position: absolute;
+  top: 50%;
+  right: 13%;
+  transform: translate(-13%, -50%);
 }
 
 #yukihand {
@@ -48,61 +85,179 @@ header nav ul li {
 /* main */
 
 .content-bar {
-  /* z-index: -1; */
-  /* position: relative;
-  top: 50%;
-  right: 1rem; */
-  align-items: center;
+  z-index: 1;
   margin: 1rem;
-
   position: absolute;
-  top: 50%;
+  top: 30%;
   right: 0.5rem;
-  transform: translate(-0.5rem, -50%);
+  transform: translate(-0.5rem, -30%);
 }
 .content-bar .cercle {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50px;
   background-color: rgba(255, 255, 255, 0.01);
   box-shadow: 0 0 0 1px #666;
-  margin: 0 0.5rem 0 auto;
+}
+.content-bar .dash {
+  width: 1px;
+  height: 1.5rem;
+  background-color: #666;
 }
 .content-bar p {
   color: #666;
-  margin: 1rem 0;
   writing-mode: vertical-lr;
   text-orientation: sideways;
-  margin: 1rem 1rem 1rem auto;
+  margin: 1.5rem auto;
   letter-spacing: 3px;
   font-size: 13;
+  text-align: right;
 }
 
+main {
+  position: sticky;
+  top: 0;
+}
 #about,
-#news,
 #shopping,
 #categories,
 #activities {
-  position: sticky;
-  top: 0;
+  position: relative;
   width: 100%;
-  height: 100vh;
+  height: auto;
+  background-color: #fff;
 }
 
+/* --- news --- */
+#news {
+  position: relative;
+  /* position: sticky;
+  top: 0%; */
+  height: 70vh;
+}
+.news-slide {
+  height: 80%;
+  margin: 2rem auto;
+  position: relative;
+}
+.one {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+.news-img {
+  width: 500px;
+  height: 400px;
+  object-fit: contain;
+}
+.one p {
+  float: right;
+  margin: 5rem;
+  width: 400px;
+}
+.link {
+  width: 200px;
+  height: 70px;
+  background-color: #d9401ece;
+  transition: 0.7s;
+}
+.news-link {
+  position: absolute;
+  bottom: -5%;
+  right: 9%;
+}
+.a-text {
+  width: 100%;
+  color: #fff;
+  margin-left: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.arrow {
+  color: #fff;
+  margin-left: 0.7rem;
+  transition: 0.7s;
+}
+.link:hover {
+  background-color: #d9401e;
+}
+.link:hover .arrow {
+  margin-left: 1.5rem;
+}
+.link:hover .arrow::after {
+  content: ">";
+}
+
+/* --- about --- */
 #about {
-  background: url("../image/about-img1.png") no-repeat 80% 50%;
-  background-size: 70% 90%;
+  background-color: #ddd;
+}
+.about-contain {
+  width: 100%;
+  height: 100vh;
+  background: url("../image/about-img1.png") no-repeat 70% 50%;
+  background-size: 70% 70%;
   background-color: rgba(255, 255, 255, 0.5);
   background-blend-mode: lighten;
 }
-
-.about-text {
+.text-content {
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  width: 100%;
+  background-color: #4494a663;
+}
+.about-texts {
+  margin: 2rem 5rem 0;
+}
+.about-texts h2 {
+  color: #fff;
+  letter-spacing: 5px;
+  line-height: 6rem;
+  font-size: 8rem;
+  text-align: right;
+  margin-top: 2rem;
+}
+.about-p {
+  width: 70%;
+  color: #fff;
 }
 
-#news {
+/* --- shopping --- */
+.shop-container {
+  width: 100%;
+}
+.explain-items {
+  display: flex;
+  margin: 5rem;
+}
+.shop-img img {
+  width: 400px;
+  height: auto;
+}
+.shop-texts {
+  margin: auto 5rem;
+}
+.shop-imgs {
+  text-align: center;
+}
+.shop-imgs img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+}
+.shop-link {
+  /* position: absolute;
+  bottom: -5%;
+  right: 9%; */
 }
 
 /* footer */
+
 .f-menu {
   display: flex;
   justify-content: space-around;
