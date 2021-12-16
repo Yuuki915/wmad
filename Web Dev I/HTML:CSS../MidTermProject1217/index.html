@@ -19,15 +19,24 @@
             </label>
             <label class="light-dark" for="humberger"></label>
             
-            <div id="menu">
-                <a href="#about">About</a>
-                <a href="#news">News</a>
-                <a href="#shopping">Shopping</a>
-                <a href="#categories">Categories</a>
-                <a href="#activities">Activities</a>
-            </div>
+            <ul id="menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#shopping">Shopping</a>
+                    <ul>
+                        <li><a href="#">ピアス</a></li>
+                        <li><a href="#">イヤリング</a></li>
+                        <li><a href="#">ヘアゴム</a></li>
+                        <li><a href="#">リング</a></li>
+                    </ul>
+                </li>
+                <li><a href="#activities">Activities</a></li>
+            </ul>
         </div>
     
+    </header>
+    
+    <main>
         <div class="hero-container">
             <div class="logo">
                 YuukiHand
@@ -36,9 +45,7 @@
                 <img src="./image/hero3.jpg" alt="heroimg">
             </div>
         </div>
-    </header>
 
-    <main>
         <section id="news">
             <div class="content-bar">
                 <div class="cercle"></div>
@@ -54,7 +61,7 @@
                     <p>
                         <span>Day 1</span>
                         <br>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aspernatur maxime officiis, consequatur non provident itaque eaque praesentium sit suscipit corrupti reiciendis ut. Temporibus cum, at dolores fugit qui corporis.</span>
+                        <span>海ゴミ。おかわ。溢れる愛よ、みんなに届け〜</span>
                     </p>
                 </div>
                 <div class="list">
@@ -73,8 +80,18 @@
                 <div class="text-content">
                     <div class="about-texts">
                         <p class="about-p">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, quia voluptatem. Dolor, delectus. Voluptatibus ex, rem saepe possimus corporis consequuntur provident nemo sit tempora cumque perferendis consequatur, explicabo architecto maiores.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores minus modi eum debitis tempora obcaecati, hic delectus nesciunt eos quasi nobis ipsam perferendis perspiciatis maxime unde sapiente qui iste!
+                            職業 | ネイリスト
+                            <br>
+                            趣味 | ハンドメイドアクセサリー作り
+                            <br>
+                            ビーチクリーンボランティア団体「くらげれんごう」所属
+                            <br>
+                            大好きな子どもたちと大好きな仲間たち、そして大好きな海に囲まれ、
+                            毎日笑顔大爆発の主婦です！
+                            <br>
+                            子どもたちからもたくさんのことを学んでいます。
+                            <br>
+                            私を取り巻く環境全てに感謝。
                         </p>
                         <h2>Yuuki</h2>
                     </div>
@@ -97,19 +114,54 @@
                     </div>
                     <div class="shop-texts">
                         <p>
-                            海で拾ったプラゴミや貝殻で作っています
+                            海で拾ったプラゴミや漂流ゴミたちや貝殻が輝きますように..
+                            <br>
+                            そしてその輝きで身につける方ももっと輝きますように..
+                            <br>
+                            という想いを込めて作っています。
                         </p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore et, neque magni reiciendis repudiandae sapiente culpa consectetur voluptates! Est perspiciatis cumque praesentium et veniam fugit reprehenderit, quos ipsa molestiae quia.</p>
                     </div>
                 </div>
 
                 <div class="shop-imgs">
-                    <img src="./image/shop1.jpg" alt="">
-                    <img src="./image/shop2.jpg" alt="">
-                    <img src="./image/shop3.jpg" alt="">
+                    <div class="shopimg-container">
+                        <div class="item-img">
+                            <a href="#">
+                                <img src="./image/shop1.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="item-texts">
+                            <p class="text1">Sakuragai earring</p>
+                            <p class="text2">$20</p>
+                        </div>
+                    </div>
+
+                    <div class="shopimg-container">
+                        <div class="item-img">
+                            <a href="#">
+                                <img src="./image/shop2.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="item-texts">
+                            <p class="text1">Sakuragai hair gomu</p>
+                            <p class="text2">$20</p>
+                        </div>
+                    </div>
+                    
+                    <div class="shopimg-container">
+                        <div class="item-img">
+                            <a href="#">
+                                <img src="./image/shop3.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="item-texts">
+                            <p class="text1">Earring</p>
+                            <p class="text2">$20</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="list">
-                    <a class="link shop-link" href="#"><p class="a-text">Shopping List<span class="arrow">>></span></p></a>
+                    <a class="link shop-link" href="#"><p class="a-text">Item List<span class="arrow">>></span></p></a>
                 </div>
             </div>
 
@@ -123,10 +175,28 @@
             </div>
 
             <div class="act-container">
-                
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam aspernatur autem nobis maiores fuga quae ut aliquid tempora perferendis repellendus earum beatae dolores dolor deserunt, modi impedit alias accusantium labore!
-                </p>
+                <div class="act-img">
+                    <img src="./image/act.jpg" alt="">
+                </div>
+                <div class="act-texts">
+                    <h2>
+                        くらげれんごう
+                    </h2>
+                    <p>
+                        ビーチクリーンのボランティア活動をしています！
+                        <br>
+                        プラスチックや発泡スチロール、漁網さえもビーチにゴミとして打ちあがります。
+                        <br>
+                        全て生活に必要不可欠なもの。ひとりひとりが少しずつ、できることからやってみてこれから先の海が少しでも綺麗になればいいなぁ、という思いでビーチクリーンなどの活動に参加しています！
+                        <br>
+                        海好きの方、楽しいことが大好きな方、お友達が欲しい方...
+                        <br>
+                        小さなお子様連れの方も大歓迎！
+                        ぜひ一度参加してみませんか？
+                        <br>
+                        絶対にクセになってまた来たくなるはずです...笑
+                    </p>
+                </div>
             </div>
         </section>
     </main>
@@ -136,9 +206,8 @@
             <div class="logo">YuukiHand</div>
             <ul>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Shopping</a></li>
-                <li><a href="#">Category</a></li>
                 <li><a href="#">News</a></li>
+                <li><a href="#">Shopping</a></li>
                 <li><a href="#">Activities</a></li>
             </ul>
         </div>
