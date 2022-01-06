@@ -1,0 +1,6 @@
+@use "vars" as c;
+@use "components/some_component";
+
+h1 {
+  color: c.$h1-color;
+}

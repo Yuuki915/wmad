@@ -1,0 +1,5 @@
+@use "../vars" as c;
+
+.comp {
+  color: c.$component-color;
+}
