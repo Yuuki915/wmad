@@ -1,0 +1,23 @@
+{
+  "name": "cuisinebo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass scss:css -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.46.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andasan/cusinebo-starter-v3-barebones.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andasan/cusinebo-starter-v3-barebones/issues"
+  },
+  "homepage": "https://github.com/andasan/cusinebo-starter-v3-barebones#readme",
+  "description": ""
+}
