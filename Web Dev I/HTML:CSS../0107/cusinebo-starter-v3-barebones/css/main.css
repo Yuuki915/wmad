@@ -5,7 +5,6 @@
   border: 3px solid #d3ab55;
   border-radius: 50%;
   margin-right: 20px;
-  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -252,19 +251,19 @@ body {
 }
 .header-banner .main-heading {
   font-family: "Dancing Script", cursive;
-  color: #d3ab55;
-  font-size: 80px;
   font-weight: 300;
   color: #d3ab55;
+  color: #d3ab55;
+  font-size: 80px;
   margin-bottom: 40px;
 }
 .header-banner .sub-heading {
+  text-align: center;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   color: #bbb;
   font-size: 40px;
   margin-bottom: 30px;
-  text-align: center;
 }
 
 .about-us {
@@ -283,7 +282,7 @@ body {
 }
 .about-us .about-us-left {
   position: relative;
-  left: -150px;
+  left: -140px;
 }
 .about-us .about-us-right {
   width: 60%;
@@ -291,14 +290,12 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 0 50px;
-  box-sizing: border-box;
 }
 .about-us .main-heading {
   color: #d3ab55;
   font-family: "Dancing Script", cursive;
   font-size: 80px;
   font-weight: 300;
-  color: #d3ab55;
   margin-bottom: 40px;
 }
 .about-us .sub-heading {
@@ -319,10 +316,73 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
   font-style: italic;
-  text-align: justify;
 }
 .about-us .description::first-letter {
   padding-left: 50px;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cards-wrapper .card {
+  width: 33.3%;
+  height: 30vw;
+  position: relative;
+  overflow: hidden;
+}
+.cards-wrapper .card:hover .card-overlay {
+  left: 0;
+}
+.cards-wrapper .card-overlay {
+  position: absolute;
+  top: 0%;
+  left: -100%;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(211, 171, 85, 0.6);
+  color: #fff;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: left 0.7s;
+}
+.cards-wrapper .card-overlay-heading {
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Nunito", sans-serif;
+  font-size: 50px;
+}
+.cards-wrapper .card-overlay-paragraph {
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.cards-wrapper .card-overlay-btn {
+  color: #d3ab55;
+  background-color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+  width: 150px;
+  height: 40px;
+  border: 1px solid #d3ab55;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.cards-wrapper .card-img {
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .footer {
@@ -344,7 +404,6 @@ body {
   margin-bottom: 70px;
 }
 .footer .footer-social-media .social-media .social-media-link {
-  text-decoration: none;
   font-size: 50px;
   color: #bbb;
   transition: color 0.7s;
@@ -357,8 +416,8 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 18px;
   color: #bbb;
+  font-size: 18px;
 }
 
 /*# sourceMappingURL=main.css.map */
