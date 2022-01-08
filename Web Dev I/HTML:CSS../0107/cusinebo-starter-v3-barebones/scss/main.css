@@ -1,3 +1,26 @@
+.logo {
+  width: 110px;
+  height: 110px;
+  font-size: 70px;
+  border: 3px solid #d3ab55;
+  border-radius: 50%;
+  margin-right: 20px;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.logo img {
+  width: 110px;
+  height: 110px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -163,6 +186,26 @@ body {
           transform: rotateZ(40deg);
 }
 
+.main-btn {
+  font-family: "Josefin Sans", sans-serif;
+  color: #d3ab55;
+  width: 170px;
+  height: 45px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: transparent;
+  border: 1px solid #d3ab55;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.main-btn:hover {
+  color: #000;
+  background-color: #d3ab55;
+}
+
 .header {
   position: relative;
   width: 100%;
@@ -188,28 +231,6 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-}
-.brand .logo {
-  width: 110px;
-  height: 110px;
-  font-size: 70px;
-  border: 3px solid #d3ab55;
-  border-radius: 50%;
-  margin-right: 20px;
-  text-decoration: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.brand .logo img {
-  width: 110px;
-  height: 110px;
 }
 .brand .main-name {
   font-weight: 300;
@@ -251,25 +272,6 @@ body {
   margin-bottom: 30px;
   text-align: center;
 }
-.header-banner .main-btn {
-  font-family: "Josefin Sans", sans-serif;
-  color: #d3ab55;
-  width: 170px;
-  height: 45px;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background-color: transparent;
-  border: 1px solid #d3ab55;
-  outline: none;
-  cursor: pointer;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-}
-.header-banner .main-btn:hover {
-  color: #000;
-  background-color: #d3ab55;
-}
 
 .about-us {
   height: 90vh;
@@ -279,5 +281,65 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.about-us .about-us-left {
+  width: 40%;
+  position: relative;
+  left: 0px;
+}
+.about-us .about-us-left img {
+  width: 100%;
+  opacity: 0.7;
+}
+.about-us .about-us-left {
+  position: relative;
+  left: -150px;
+}
+.about-us .about-us-right {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 50px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.about-us .main-heading {
+  color: #d3ab55;
+  font-family: "Dancing Script", cursive;
+  font-size: 80px;
+  font-weight: 300;
+  color: #d3ab55;
+  margin-bottom: 40px;
+}
+.about-us .sub-heading {
+  color: #bbb;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 40px;
+  color: #bbb;
+  margin-bottom: 30px;
+  font-weight: 300;
+  text-align: center;
+}
+.about-us .stars {
+  color: #d3ab55;
+  margin: 30px 0;
+}
+.about-us .description {
+  color: #bbb;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  text-align: justify;
+}
+.about-us .description::first-letter {
+  padding-left: 50px;
 }
 /*# sourceMappingURL=main.css.map */
