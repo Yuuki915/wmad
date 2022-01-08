@@ -21,7 +21,6 @@
       margin-bottom: 70px;
 
       .social-media-link {
-        text-decoration: none;
         font-size: 50px;
         color: $color-secondary;
         transition: color 0.7s;
@@ -37,8 +36,8 @@
     .footer-copyright-paragraph {
       @include textStyles();
       font-family: $font-josefinSans;
-      font-size: 18px;
       color: $color-secondary;
+      font-size: 18px;
     }
   }
 }
