@@ -23,6 +23,6 @@ for (let i = 0; i < 4; i++) {
     degrees = "FAILED";
   }
   console.log(
-    ` Name: ${students.name[i]} \n Total Score: ${total} \n Degrees: ${degrees}`
+    `Name: ${students.name[i]} \n Total Score: ${total} \n Degrees: ${degrees}`
   );
 }
