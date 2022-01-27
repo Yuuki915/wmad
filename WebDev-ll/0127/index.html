@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .imageCarousel {
+        height: 50%;
+        width: 50%;
+        margin: 20px auto;
+      }
+      .imageCarousel > img {
+        width: 100%;
+        opacity: 1;
+
+        transition: opasity 0.5s;
+      }
+
+      #prev-btn,
+      #next-btn {
+        display: inline-block;
+        padding: 10px 12px;
+        width: auto;
+        outline: none;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+
+      #prev-btn:hover,
+      #next-btn:hover {
+        color: #fff;
+        background-color: #000;
+      }
+      #prev-btn {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        margin-left: 5px;
+      }
+
+      #next-btn {
+        position: absolute;
+        top: 25%;
+        right: 25%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="imageCarousel">
+      <img id="img" src="./images/avocado.jpeg" alt="" />
+      <button id="prev-btn"><</button>
+      <button id="next-btn">></button>
+    </div>
+
+    <script>
+      const images = [
+        "./images/avocado.jpeg",
+        "./images/pancake.jpeg",
+        "./images/sandwich.jpeg",
+        "./images/spaghetti.jpeg",
+      ];
+
+      let currentIndex = 0;
+
+      //solution here
+      const prevBtn = document.querySelector("#prev-btn");
+      const nextBtn = document.querySelector("#next-btn");
+      let img = document.querySelector("#img");
+
+      prevBtn.addEventListener("click", () => {
+        if (currentIndex === 0) {
+          currentIndex = images.length - 1;
+        } else {
+          currentIndex--;
+        }
+        img.src = images[currentIndex];
+      });
+      nextBtn.addEventListener("click", () => {
+        if (currentIndex === images.length - 1) {
+          currentIndex = 0;
+        } else {
+          currentIndex++;
+        }
+        img.src = images[currentIndex];
+      });
+
+      //solution end here
+    </script>
+  </body>
+</html>
