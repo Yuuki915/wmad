@@ -112,6 +112,28 @@ container.map((val) => {
     cartImgAndPrice.appendChild(cloneItemPrice);
     cartImgAndPrice.appendChild(cartTrashIcon);
 
+    // 重複させない
+    if (cartCounter >= 2) {
+      const byeCart = cartItemList.children[cartItemList.children.length - 2];
+      byeCart.remove();
+      cloneItemPrice.textContent = `$ ${val.prices} x ${cartCounter}`;
+    }
+
+    // カートにバッジ
+    const bgContainer = document.createElement("div");
+    bgContainer.classList.add("bgContainer");
+    const badge = document.createElement("div");
+    badge.classList.add("badge");
+    bgContainer.appendChild(badge);
+    cart.appendChild(bgContainer);
+
+    let bgCounter = bgContainer.children.length;
+    // badgeCounter++;
+    // if (bgCounter >= 1) {
+    //   badge.style.display = "block";
+    // }
+    // badge.innerHTML = bgCounter;
+
     // 削除
     cartTrashIcon.addEventListener("click", () => {
       cartCounter--;
@@ -127,30 +149,22 @@ container.map((val) => {
       } else if (cartCounter === 0) {
         cartImgAndPrice.remove();
       }
+
+      // bgCounter--;
+      // if (bgCounter === 0) {
+      //   badge.style.display = "none";
+      // }
+      // // badge.style.display = "none";
+      // badge.innerHTML = bgCounter;
+
+      // console.dir(bgContainer);
+      // console.log(bgContainer.children.length);
+      // if (bgCounter === 0) {
+      //   badge.style.display = "none";
+      // }
+      // badge.style.display = "none";
+      // badge.innerHTML = bgCounter;
     });
-
-    // 重複させない
-    if (cartCounter >= 2) {
-      const byeCart = cartItemList.children[cartItemList.children.length - 2];
-      byeCart.remove();
-      cloneItemPrice.textContent = `$ ${val.prices} x ${cartCounter}`;
-    }
-
-    // // カートにバッジ
-    // const badge = document.createElement("div");
-    // badge.classList.add("badge");
-    // badge.classList.add("hidden");
-    // cart.appendChild(badge);
-
-    // badgeCounter++;
-    // if (badgeCounter >= 1) {
-    //   badge.classList.remove("hidden");
-    // }
-    // badge.innerHTML = badgeCounter;
-
-    // if (cartTotalPrice === 0) {
-    //   badge.classList.add("hidden");
-    // }
   });
 
   //
