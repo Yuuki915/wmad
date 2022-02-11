@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=M+PLUS+Rounded+1c:wght@100;300&family=MonteCarlo&family=Open+Sans:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  height: 5rem;
+  padding: 0 1.5rem;
+  letter-spacing: 2px;
+
+  z-index: 999;
+}
+
+.hamburger span {
+  display: block;
+  width: 1.5rem;
+  height: 0.1rem;
+  background-color: #fff;
+  margin: 0.4rem;
+}
+.shop-name {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+
+  font-family: "Abril Fatface", cursive;
+}
+.header .fas {
+  margin-left: 1rem;
+}
+i {
+  font-size: 20px;
+}
+
+.cart {
+  position: relative;
+}
+
+/* --- likes --- */
+.header i {
+  cursor: pointer;
+}
+.likes {
+  position: relative;
+}
+.likes .like-list {
+  display: none;
+  right: -0.3rem;
+}
+.likes:hover .like-list {
+  display: block;
+}
+.changeColor {
+  color: red;
+}
+
+.cart-list .item-details,
+.like-list .item-details {
+  margin-top: 0.5rem;
+}
+.cart-list .itemTitle,
+.like-list .itemTitle {
+  margin-left: 2rem;
+}
+.cart-list .cart-total,
+.like-list .like-total {
+  margin: 1rem;
+}
+
+/* --- cart --- */
+.hoverAction {
+  position: absolute;
+  top: 1rem;
+  width: 20rem;
+
+  min-height: 10rem;
+  padding: 1rem;
+  z-index: 1;
+
+  display: block;
+  font-size: 15px;
+  background-color: #7b747c9a;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  margin: 0.1rem 0;
+}
+.cart-list {
+  display: none;
+  right: -0.5rem;
+}
+
+.cart:hover .cart-list {
+  display: block;
+}
+
+.cart-item-list .fa-trash-alt {
+  margin: auto 0;
+}
+
+.imgAndPrice {
+  height: 100px;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.imgAndPrice img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin-right: 1rem;
+}
+.imgAndPrice .itemPrice {
+  width: 100px;
+  font-size: 13px;
+  margin: auto 0;
+  text-align: center;
+}
+
+.imgAndPrice .icons-in-like {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+.icons-in-like i {
+  margin: 0.5rem;
+}
+
+.border {
+  width: 90%;
+  height: 1px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+/* ----- main ----- */
+.main {
+  background-color: #0f0f0f;
+}
+.items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 3rem 3rem;
+}
+
+.item-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.img {
+  width: 300px;
+  height: 300px;
+  padding: 1rem;
+}
+.img img {
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+.item-container:hover img {
+  background-color: #231825;
+  opacity: 0.5;
+}
+.item-container .item-details {
+  text-align: center;
+  color: #fff;
+}
+.main .itemTitle {
+  width: 100%;
+  justify-content: space-between;
+}
+.main .itemPrice {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.hover-container {
+  width: 100%;
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  display: none;
+  transition: 0.3s;
+}
+.hover-container button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+  background-color: #4e4650bb;
+  border-radius: 100px;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 1px;
+  padding: 1rem 1.5rem;
+
+  transition: 0.3s;
+  z-index: 2;
+}
+button:hover {
+  background-color: #4e4650;
+}
+
+.item-container:hover .hover-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* ----- footer ----- */
+.footer {
+  background-color: #000;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  line-height: 2rem;
+  letter-spacing: 2px;
+}
+
+.badge {
+  display: none;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 13px;
+  height: 13px;
+  background-color: red;
+  border-radius: 50%;
+  color: #fff;
+
+  font-size: 6px;
+  text-align: end;
+  line-height: 13px;
+}
