@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=M+PLUS+Rounded+1c:wght@100;300&family=MonteCarlo&family=Open+Sans:wght@300&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #231825;
+  background-color: #000;
   color: #fff;
   height: 5rem;
   padding: 0 1.5rem;
@@ -22,83 +23,77 @@
   background-color: #fff;
   margin: 0.4rem;
 }
+.shop-name {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 3px;
 
+  font-family: "Abril Fatface", cursive;
+}
 .header .fas {
   margin-left: 1rem;
 }
+i {
+  font-size: 20px;
+}
 
 /* --- cart --- */
-.in-cart-container {
-  display: none;
-
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2;
-}
-
-.in-cart {
-  background-color: #fff;
-  border-radius: 20px;
-  width: 80%;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  color: red;
-  text-align: center;
-  padding: 3rem;
-}
-
-.cart-list {
-  display: none;
-}
-
-.cart:hover .in-cart-container {
-  /* display: none; */
-
-  /* width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2; */
-}
-.cart:hover .cart-list {
-  width: 10rem;
-  height: auto;
+.hoverAction {
   position: absolute;
   top: 3rem;
-  right: 0;
+  width: 50%;
+  min-height: 10rem;
   padding: 1rem;
   z-index: 1;
 
   display: block;
-  font-size: 13px;
+  font-size: 15px;
   background-color: #7b747c9a;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   padding: 1rem;
   margin: 0.1rem 0;
+}
+.cart-list {
+  display: none;
+  right: 3rem;
+}
 
-  /* --- */
-  /* background-color: #fff;
-  border-radius: 20px;
-  width: 80%;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: red;
+.cart:hover .cart-list {
+  display: block;
+}
+
+.cart-item-list .fa-trash-alt {
+  margin: auto 0;
+}
+
+.imgAndPrice {
+  height: 100px;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.imgAndPrice img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin-right: 1rem;
+}
+.imgAndPrice .itemPrice {
+  width: 100px;
+  font-size: 13px;
+  margin: auto 0;
   text-align: center;
-  padding: 3rem;
-  z-index: 9; */
+}
+
+.imgAndPrice .icons-in-like {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+.icons-in-like i {
+  margin: 0.5rem;
 }
 
 /* --- likes --- */
@@ -107,43 +102,53 @@
 }
 .likes .like-list {
   display: none;
+  right: 1rem;
 }
-
 .likes:hover .like-list {
-  width: 10rem;
-  height: auto;
-  position: absolute;
-  top: 3rem;
-  right: 0;
-  padding: 1rem;
-  z-index: 1;
-
   display: block;
-  font-size: 13px;
-  background-color: #7b747c9a;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  padding: 1rem;
-  margin: 0.1rem 0;
 }
-.item-details {
+.changeColor {
+  color: red;
+}
+
+.cart-list .item-details,
+.like-list .item-details {
   margin-top: 0.5rem;
+}
+.cart-list .itemTitle,
+.like-list .itemTitle {
+  margin-left: 2rem;
+}
+.cart-list .cart-total,
+.like-list .like-total {
+  margin: 1rem;
+}
+.border {
+  width: 90%;
+  height: 1px;
+  background-color: #fff;
+  margin: 0 auto;
 }
 
 /* ----- main ----- */
+.main {
+  background-color: #0f0f0f;
+}
 .items {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 3rem 3rem;
+  padding: 3rem 3rem;
 }
 
 .item-container {
   position: relative;
-  /* display: none; */
+  margin-bottom: 2rem;
 }
+
 .img {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   padding: 1rem;
 }
 .img img {
@@ -155,14 +160,16 @@
   background-color: #231825;
   opacity: 0.5;
 }
-.itemTitle {
-  width: 100%;
+.item-container .item-details {
   text-align: center;
+  color: #fff;
+}
+.main .itemTitle {
+  width: 100%;
   justify-content: space-between;
 }
-.itemPrice {
+.main .itemPrice {
   width: 100%;
-  text-align: center;
   justify-content: space-between;
 }
 
@@ -184,7 +191,7 @@
   color: #fff;
   font-size: 13px;
   letter-spacing: 1px;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1.5rem;
 
   transition: 0.3s;
   z-index: 2;
