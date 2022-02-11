@@ -6,6 +6,8 @@
 }
 
 .header {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,6 +16,8 @@
   height: 5rem;
   padding: 0 1.5rem;
   letter-spacing: 2px;
+
+  z-index: 999;
 }
 
 .hamburger span {
@@ -37,11 +41,47 @@ i {
   font-size: 20px;
 }
 
+.cart {
+  position: relative;
+}
+
+/* --- likes --- */
+.header i {
+  cursor: pointer;
+}
+.likes {
+  position: relative;
+}
+.likes .like-list {
+  display: none;
+  right: -0.3rem;
+}
+.likes:hover .like-list {
+  display: block;
+}
+.changeColor {
+  color: red;
+}
+
+.cart-list .item-details,
+.like-list .item-details {
+  margin-top: 0.5rem;
+}
+.cart-list .itemTitle,
+.like-list .itemTitle {
+  margin-left: 2rem;
+}
+.cart-list .cart-total,
+.like-list .like-total {
+  margin: 1rem;
+}
+
 /* --- cart --- */
 .hoverAction {
   position: absolute;
-  top: 3rem;
-  width: 50%;
+  top: 1rem;
+  width: 20rem;
+
   min-height: 10rem;
   padding: 1rem;
   z-index: 1;
@@ -55,7 +95,7 @@ i {
 }
 .cart-list {
   display: none;
-  right: 3rem;
+  right: -0.5rem;
 }
 
 .cart:hover .cart-list {
@@ -96,33 +136,6 @@ i {
   margin: 0.5rem;
 }
 
-/* --- likes --- */
-.header i {
-  cursor: pointer;
-}
-.likes .like-list {
-  display: none;
-  right: 1rem;
-}
-.likes:hover .like-list {
-  display: block;
-}
-.changeColor {
-  color: red;
-}
-
-.cart-list .item-details,
-.like-list .item-details {
-  margin-top: 0.5rem;
-}
-.cart-list .itemTitle,
-.like-list .itemTitle {
-  margin-left: 2rem;
-}
-.cart-list .cart-total,
-.like-list .like-total {
-  margin: 1rem;
-}
 .border {
   width: 90%;
   height: 1px;
@@ -207,10 +220,26 @@ button:hover {
 
 /* ----- footer ----- */
 .footer {
-  background-color: #231825;
+  background-color: #000;
   color: #fff;
   font-size: 13px;
   text-align: center;
   line-height: 2rem;
   letter-spacing: 2px;
+}
+
+.badge {
+  display: none;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 13px;
+  height: 13px;
+  background-color: red;
+  border-radius: 50%;
+  color: #fff;
+
+  font-size: 6px;
+  text-align: end;
+  line-height: 13px;
 }
