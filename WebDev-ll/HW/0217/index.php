@@ -69,23 +69,23 @@ echo '<br><br><br>--- 5 ---';
 </head>
  
 <body>
+    <?php
+        $city = array(
+            'Japan' => 'Tokyo', 
+            'Mexico' => 'Mexico City', 
+            'USA' => 'New York City',  
+            'India' => 'Mumbai', 
+            'Korea' => 'Seoul', 
+            'China' => 'Shanghai', 
+            'Nigeria' => 'Lagos',  
+            'Argentina' => 'Buenos Aires', 
+            'Egypt' => 'Cairo', 
+            'England' => 'London'
+        );
+    ?>
+
     <form>
         <p>Please choose a city:</p>
-
-        <?php
-            $city = array(
-                'Japan' => 'Tokyo', 
-                'Mexico' => 'Mexico City', 
-                'USA' => 'New York City',  
-                'India' => 'Mumbai', 
-                'Korea' => 'Seoul', 
-                'China' => 'Shanghai', 
-                'Nigeria' => 'Lagos',  
-                'Argentina' => 'Buenos Aires', 
-                'Egypt' => 'Cairo', 
-                'England' => 'London'
-            );
-        ?>
 
         <select name="city">
         <!-- dropdown goes here... -->
