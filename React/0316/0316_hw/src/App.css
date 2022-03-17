@@ -2,7 +2,8 @@
   text-align: center;
 }
 
-.one {
+.one,
+.two {
   width: 300px;
   margin: 0 auto;
 }
@@ -18,7 +19,7 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 230px;
-  height: 200px;
+  height: 210px;
   display: inline-block;
 }
 .btns {
@@ -27,4 +28,22 @@ img {
   justify-content: space-around;
   background-color: #6bbe92;
   margin-top: 1rem;
+}
+.arr-box {
+  width: 100%;
+  min-height: 50px;
+  background-color: #4f6877;
+  padding: 1rem 0;
+}
+li {
+  list-style: none;
+}
+.btn-two {
+  width: 100%;
+  padding: 10px 0;
+  color: #fff;
+  background-color: #f16100;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
 }
