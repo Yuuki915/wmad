@@ -15,16 +15,16 @@ export default function ChallengeOne() {
   };
 
   return (
-    <div className="one">
+    <div>
       <h2>Challenge 1</h2>
-      <div className="img-container">
-        <img src={imgSrc} alt="" />
+      <div className="msg">
+        <img className="ch1" src={imgSrc} alt="" />
       </div>
       <div className="btns">
-        <button className="btn to-left" onClick={toLeft}>
+        <button className="btn" onClick={toLeft}>
           ←
         </button>
-        <button className="btn to-right" onClick={toRight}>
+        <button className="btn" onClick={toRight}>
           →
         </button>
       </div>
