@@ -17,10 +17,12 @@ export default function ChallengeTwo() {
   };
 
   return (
-    <div className="two">
+    <div>
       <h2>Challenge 2</h2>
-      <div className="arr-box">{students}</div>
-      <button className="btn-two" onClick={randomize}>
+      <div className="msg">
+        <ul>{students}</ul>
+      </div>
+      <button className="btn large" onClick={randomize}>
         Randomize
       </button>
     </div>
