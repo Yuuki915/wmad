@@ -4,6 +4,8 @@ import totoro from "../assets/となりのトトロ.mp3";
 import bu from "../assets/bubu.wav";
 import pinpon from "../assets/maru.wav";
 
+import chibiTotoros from "../assets/syoutotoro.png";
+
 function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -49,7 +51,12 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
 
   return (
     <div className="trivia">
-      <div className="question">{question?.question}</div>
+      <div className="question">
+        <p>{question?.question}</p>
+        <div className="q-img">
+          <img src={chibiTotoros} alt="" />
+        </div>
+      </div>
       <div className="answers">
         {question?.answers.map((a) => (
           <div

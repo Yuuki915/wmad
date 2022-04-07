@@ -4,155 +4,314 @@ import Timer from "./components/Timer";
 import Trivia from "./components/Trivia";
 import Start from "./components/Start";
 
+// import dataJson from "../data.json";
+
 function App() {
   const [username, setUsername] = useState(null);
   const [questionNumber, setQuestionNumber] = useState(1);
   const [stop, setStop] = useState(false);
-  const [earned, setEarned] = useState("$ 0");
+  const [score, setScore] = useState("0");
 
   const data = [
     {
       id: 1,
-      question: "Rolex is a company that specializes in what type of product?",
+      question: "What type of tree was the big Totoro found in?",
       answers: [
         {
-          text: "Phone",
+          text: "Just a really big one",
           correct: false,
         },
         {
-          text: "Watches",
+          text: "Oak",
+          correct: false,
+        },
+        {
+          text: "Camphor",
           correct: true,
         },
         {
-          text: "Food",
-          correct: false,
-        },
-        {
-          text: "Cosmetic",
+          text: "Cedar",
           correct: false,
         },
       ],
     },
     {
       id: 2,
-      question: "When did the website `Facebook` launch?",
+      question: "What was the totoro Mei was first chasing?",
       answers: [
         {
-          text: "2004",
+          text: "Chuu Totoro",
+          correct: false,
+        },
+        {
+          text: "Chibi Totoro",
           correct: true,
         },
         {
-          text: "2005",
+          text: "King Totoro",
           correct: false,
         },
         {
-          text: "2006",
-          correct: false,
-        },
-        {
-          text: "2007",
+          text: "Nekobus",
           correct: false,
         },
       ],
     },
     {
       id: 3,
-      question: "Who played the character of harry potter in movie?",
+      question: "What is the name of Mei's older sister?",
       answers: [
         {
-          text: "Johnny Deep",
+          text: "Sachiko",
           correct: false,
         },
         {
-          text: "Leonardo Di Caprio",
+          text: "Satoko",
           correct: false,
         },
         {
-          text: "Denzel Washington",
+          text: "Satomi",
           correct: false,
         },
         {
-          text: "Daniel Red Cliff",
+          text: "Satsuki",
           correct: true,
         },
       ],
     },
+    {
+      id: 4,
+      question: "How does the family get rid of the Dust Bunnies?",
+      answers: [
+        {
+          text: "Laughing",
+          correct: true,
+        },
+        {
+          text: "Planting trees",
+          correct: false,
+        },
+        {
+          text: "Cleaning",
+          correct: false,
+        },
+        {
+          text: "They let them stay",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 5,
+      question: "What does Granny call the black fuzzy things",
+      answers: [
+        {
+          text: "Spirits",
+          correct: false,
+        },
+        {
+          text: "Totoro",
+          correct: false,
+        },
+        {
+          text: "Soot Sprites",
+          correct: true,
+        },
+        {
+          text: "Dust Bunnies",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 6,
+      question: "What does Granny find at the lake?",
+      answers: [
+        {
+          text: "A hat",
+          correct: false,
+        },
+        {
+          text: "A sandal",
+          correct: true,
+        },
+        {
+          text: "A dust bunny",
+          correct: false,
+        },
+        {
+          text: "A piece of Mei's dress",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 7,
+      question: "At the bus stop, what does Satsuki give to Totoro?",
+      answers: [
+        {
+          text: "Acorn",
+          correct: false,
+        },
+        {
+          text: "Umbrella",
+          correct: true,
+        },
+        {
+          text: "Big leaf",
+          correct: false,
+        },
+        {
+          text: "Hat",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 8,
+      question: "What animal is the bus?",
+      answers: [
+        {
+          text: "Owl",
+          correct: false,
+        },
+        {
+          text: "Dog",
+          correct: false,
+        },
+        {
+          text: "Cat",
+          correct: true,
+        },
+        {
+          text: "Bat",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 9,
+      question: "What is their boy neighbour's name?",
+      answers: [
+        {
+          text: "Ken",
+          correct: false,
+        },
+        {
+          text: "Kanta",
+          correct: true,
+        },
+        {
+          text: "Kouta",
+          correct: false,
+        },
+        {
+          text: "Kouji",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 10,
+      question: "Totoro appeared as a cameo in which film?",
+      answers: [
+        {
+          text: "Toy Story 1",
+          correct: false,
+        },
+        {
+          text: "Toy Story 2",
+          correct: false,
+        },
+        {
+          text: "Toy Story 3",
+          correct: true,
+        },
+        {
+          text: "Toy Story 4",
+          correct: false,
+        },
+      ],
+    },
   ];
-  const moneyPyramid = useMemo(
+  const pyramid = useMemo(
     () =>
       [
-        { id: 1, amount: "$ 100" },
-        { id: 2, amount: "$ 200" },
-        { id: 3, amount: "$ 300" },
-        { id: 4, amount: "$ 500" },
-        { id: 5, amount: "$ 1000" },
-        { id: 6, amount: "$ 2000" },
-        { id: 7, amount: "$ 4000" },
-        { id: 8, amount: "$ 8000" },
-        { id: 9, amount: "$ 16000" },
-        { id: 10, amount: "$ 32000" },
-        { id: 11, amount: "$ 64000" },
-        { id: 12, amount: "$ 125000" },
-        { id: 13, amount: "$ 250000" },
-        { id: 14, amount: "$ 500000" },
-        { id: 15, amount: "$ 1000000" },
+        { id: 1 },
+        { id: 2 },
+        { id: 3 },
+        { id: 4 },
+        { id: 5 },
+        { id: 6 },
+        { id: 7 },
+        { id: 8 },
+        { id: 9 },
+        { id: 10 },
       ].reverse(),
     []
   );
 
   useEffect(() => {
     questionNumber > 1 &&
-      setEarned(moneyPyramid.find((m) => m.id === questionNumber - 1).amount);
-  }, [moneyPyramid, questionNumber]);
+      setScore(pyramid.find((m) => m.id === questionNumber).amount);
+  }, [pyramid, questionNumber]);
 
   return (
     <div className="app">
-      {/* {username ? ( */}
-      <>
-        <div className="main">
-          <div className="wrapper">
-            {stop ? (
-              <h1 className="earnText">You earned: {earned}</h1>
-            ) : (
-              <>
-                <div className="top">
-                  <div className="timer">
-                    <Timer setStop={setStop} questionNumber={questionNumber} />
+      {username ? (
+        <>
+          <div className="main">
+            <div className="wrapper">
+              {stop ? (
+                <div className="result">
+                  <h1 className="result-score">Your score: {score}</h1>
+                  <button className="result-back-btn">back</button>
+                </div>
+              ) : (
+                <>
+                  <div className="top">
+                    <div className="timer">
+                      <Timer
+                        setStop={setStop}
+                        questionNumber={questionNumber}
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="bottom">
-                  <Trivia
-                    data={data}
-                    setStop={setStop}
-                    questionNumber={questionNumber}
-                    setQuestionNumber={setQuestionNumber}
-                  />
-                </div>
-              </>
-            )}
+                  <div className="bottom">
+                    <Trivia
+                      data={data}
+                      setStop={setStop}
+                      questionNumber={questionNumber}
+                      setQuestionNumber={setQuestionNumber}
+                    />
+                  </div>
+                </>
+              )}
+            </div>
           </div>
-        </div>
-        <div className="pyramid">
-          <ul className="moneyList">
-            {/* <div className="greet">Welcome {username}</div> */}
-            {/* {moneyPyramid.map((m) => (
-              <li
-                className={
-                  questionNumber === m.id
-                    ? "moneyListItem active"
-                    : "moneyListItem"
-                }
-              >
-                <span className="moneyListItemNum">{m.id}</span>
-                <span className="moneyListItemAmount">{m.amount}</span>
-              </li>
-            ))} */}
-          </ul>
-        </div>
-      </>
-      {/* ) : (
+          <div className="score-board">
+            <div className="greet">
+              <div className="border"></div>
+              <div className="border2"></div>
+              Welcome
+              <p>{username}</p>
+            </div>
+            <ul className="scores">
+              <li className="map-goal">GOAL</li>
+              {pyramid.map((m) => (
+                <li
+                  className={questionNumber === m.id ? "score active" : "score"}
+                >
+                  <span className="score-num">{m.id}</span>
+                </li>
+              ))}
+              <li className="map-start">START</li>
+            </ul>
+          </div>
+        </>
+      ) : (
         <Start setUsername={setUsername} />
-      )} */}
+      )}
     </div>
   );
 }
