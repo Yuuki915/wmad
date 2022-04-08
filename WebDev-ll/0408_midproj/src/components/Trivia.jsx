@@ -15,7 +15,7 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   const [wrongAnswer] = useSound(bu);
 
   useEffect(() => {
-    bgmusic();
+    // bgmusic();
   }, [bgmusic]);
 
   useEffect(() => {
@@ -30,19 +30,19 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
   const handleClick = (a) => {
     setSelectedAnswer(a);
     setClassName("answer active");
-    delay(3000, () =>
+    delay(1000, () =>
       setClassName(a.correct ? "answer correct" : "answer wrong")
     );
-    delay(6000, () => {
+    delay(2000, () => {
       if (a.correct) {
         correctAnswer();
-        delay(1000, () => {
+        delay(500, () => {
           setQuestionNumber((prev) => prev + 1);
           setSelectedAnswer(null);
         });
       } else {
         wrongAnswer();
-        delay(1000, () => {
+        delay(500, () => {
           setStop(true);
         });
       }
@@ -51,21 +51,24 @@ function Trivia({ data, setStop, questionNumber, setQuestionNumber }) {
 
   return (
     <div className="trivia">
-      <div className="question">
-        <p>{question?.question}</p>
-        <div className="q-img">
-          <img src={chibiTotoros} alt="" />
-        </div>
-      </div>
-      <div className="answers">
-        {question?.answers.map((a) => (
-          <div
-            className={selectedAnswer === a ? className : "answer"}
-            onClick={() => handleClick(a)}
-          >
-            {a.text}
+      <div className="q-a">
+        <div className="question">
+          <p>{question?.question}</p>
+          <div className="q-img">
+            <img src={chibiTotoros} alt="" />
           </div>
-        ))}
+        </div>
+        <div className="answers">
+          {question?.answers.map((a) => (
+            <div
+              key={a.key}
+              className={selectedAnswer === a ? className : "answer"}
+              onClick={() => handleClick(a)}
+            >
+              {a.text}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
