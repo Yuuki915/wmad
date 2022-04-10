@@ -1,0 +1,45 @@
+@media screen and (max-width: 1110px) {
+  .answer {
+    /* width: 20%; */
+    margin: 0.3rem;
+  }
+  .q-img {
+    bottom: 0;
+    width: 5rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .main {
+    width: 100vw;
+  }
+  .score-board {
+    display: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  .main {
+    background: url("./assets/totoroBgMo.jpeg") 0% 30% no-repeat;
+    background-size: cover;
+  }
+  .start-logo-img {
+    width: auto;
+  }
+  .start-logo-img img {
+    width: 80vw;
+  }
+  .start-quiz {
+    top: -1rem;
+    left: 2rem;
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .start-quiz {
+    top: -1rem;
+    left: 2rem;
+    font-size: 2rem;
+  }
+  .yay p {
+    font-size: 3rem;
+  }
+}
