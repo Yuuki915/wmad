@@ -22,9 +22,21 @@ const App = () => {
 
   const routes = useRoutes([
     { path: "/", element: <Home /> },
-    { path: "/login", element: <Login /> },
-    { path: "/register", element: <Register /> },
-    { path: "/dashboard", element: <Dashboard /> },
+    {
+      path: "/login",
+      element: user ? <NotFound /> : <Login afterLogin={() => setUser(true)} />,
+    },
+    {
+      path: "/register",
+      element: user ? (
+        <NotFound />
+      ) : (
+        <Register afterRegister={() => setUser(true)} />
+      ),
+    },
+
+    { path: "/dashboard", element: user ? <Dashboard /> : <NotFound /> },
+
     { path: "/post/:postId", element: <PostPage /> },
     { path: "/comments", element: <Comments /> },
     { path: "/profile", element: <Profile /> },
