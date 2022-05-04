@@ -12,7 +12,7 @@ export default function Filter() {
     },
   });
   return (
-    <div>
+    <div className="filter">
       <CssTextField
         fullWidth
         id="standard-basic"
