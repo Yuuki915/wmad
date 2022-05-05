@@ -1,15 +1,26 @@
+import react, { useState } from "react";
 import "./App.css";
-// import InputCards from "./component/InputCards";
 import { Header, Filter, Lists } from "./templates";
+import AddInputCards from "./component/AddInputCards";
+// import EditInputCards from "./component/EditInputCards";
 
 function App() {
+  const [cssToggle, setCssToggle] = useState("");
+  const [bgCss, setBgCss] = useState("");
+
+  const popupHandler = () => {
+    setCssToggle("add-cards");
+    setBgCss("app-bg");
+  };
   return (
-    <div className="App">
+    <div className={`App ${bgCss}`}>
       <Header />
       <Filter />
-      <Lists />
+      <div onClick={() => popupHandler()}>heyyyy</div>
+      {/* <Lists /> */}
 
-      {/* <InputCards /> */}
+      <AddInputCards class={cssToggle} set={setCssToggle} setBg={setBgCss} />
+      {/* <EditInputCards /> */}
     </div>
   );
 }

@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
-import { TextField } from "@mui/material";
+import { MenuItem, TextField } from "@mui/material";
 
-export default function InputCard() {
+const states = [
+  {
+    value: "Released",
+  },
+  {
+    value: "Comming soon",
+  },
+];
+
+export default function EditInputCard() {
   const CssTextField = styled(TextField)({
     "& label.Mui-focused": {
       color: "#e91e63",
@@ -12,63 +21,96 @@ export default function InputCard() {
     },
   });
 
+  const [state, setState] = useState("state");
+  const handleChange = (event) => {
+    setState(event.target.value);
+    console.log(event.target.value);
+  };
+
   return (
     <div className="input-card">
       <CssTextField
         required
         id="standard-required"
-        label="Id"
+        label="id"
         defaultValue=""
         variant="standard"
+        fullWidth
         className="input-card"
+        sx={{
+          mb: 2,
+        }}
       />
-
-      {/* 
 
       <CssTextField
         required
+        fullWidth
         id="standard-required"
         label="Title"
         defaultValue=""
         variant="standard"
         className="input-card"
+        sx={{
+          mb: 2,
+        }}
       />
 
       <CssTextField
         required
-        id="standard-required"
+        fullWidth
+        select
+        id="standard-select-currency"
         label="State"
+        value={state}
+        variant="standard"
+        className="input-card"
+        sx={{
+          mb: 2,
+        }}
+        onChange={handleChange}
+      >
+        {states.map((option) => (
+          <MenuItem key={option.key} value={option.value}>
+            {option.value}
+          </MenuItem>
+        ))}
+      </CssTextField>
+
+      <CssTextField
+        fullWidth
+        id="standard-required"
+        label="Released at"
         defaultValue=""
         variant="standard"
         className="input-card"
+        sx={{
+          mb: 2,
+        }}
       />
 
       <CssTextField
-        required
+        fullWidth
         id="standard-required"
-        label="Url"
+        label="Next vol"
         defaultValue=""
         variant="standard"
         className="input-card"
+        sx={{
+          mb: 2,
+        }}
       />
 
       <CssTextField
-        required
+        fullWidth
         id="standard-required"
-        label="Updated at"
+        label="Official URL"
         defaultValue=""
         variant="standard"
         className="input-card"
+        sx={{
+          mb: 2,
+        }}
       />
-
-      <CssTextField
-        required
-        id="standard-required"
-        label="Created at"
-        defaultValue=""
-        variant="standard"
-        className="input-card"
-      /> */}
     </div>
   );
 }
