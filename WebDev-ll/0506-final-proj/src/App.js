@@ -39,7 +39,7 @@ function App() {
     "Title",
     "Vol",
     "Status",
-    "Release at",
+    "Released at",
     "New volume",
     <AddIcon onClick={() => addHandler()} />,
   ];

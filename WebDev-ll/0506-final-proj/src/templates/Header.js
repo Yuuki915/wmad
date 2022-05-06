@@ -11,7 +11,7 @@ const Header = () => {
         <AppBar position="static">
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Hi
+              New comics are coming up!
             </Typography>
           </Toolbar>
         </AppBar>
