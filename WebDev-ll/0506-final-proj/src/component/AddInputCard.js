@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { MenuItem, TextField } from "@mui/material";
-import { useSelector } from "react-redux";
+import { Select, MenuItem, TextField } from "@mui/material";
+// import { useSelector } from "react-redux";
 
-const states = [
+const statuses = [
   {
+    key: 1,
     value: "Released",
   },
   {
+    key: 2,
     value: "Comming soon",
   },
 ];
@@ -22,19 +24,7 @@ export default function AddInputCard(props) {
     },
   });
 
-  // const [id, setId] = useState("");
-  // const [title, setTitle] = useState("");
-  // const [state, setState] = useState("state");
-  // const [release, setRelease] = useState("");
-  // const [newVol, setNewVol] = useState("");
-  // const [url, setUrl] = useState("");
-
-  // const handleChange = (event) => {
-  //   setState(event.target.value);
-  //   console.log(event.target.value);
-  // };
-
-  // const addInfo = useSelector((state) => state);
+  // const [value, setValue] = useState();
 
   return (
     <div className="add-card">
@@ -43,7 +33,8 @@ export default function AddInputCard(props) {
         select={props.select}
         id={props.id}
         label={props.label}
-        defaultValue={props.defaultValue}
+        value={props.value}
+        onChange={(e) => console.log(props.onChange)}
         variant={props.variant}
         fullWidth
         sx={{
@@ -51,10 +42,24 @@ export default function AddInputCard(props) {
         }}
         className="input-card"
       >
-        {states.map((option) => (
-          <MenuItem key={option.key} value={option.value}>
-            {option.value}
-          </MenuItem>
+        {/* {select
+          ? statuses.map((option) => (
+              <MenuItem key={option.key} value={option.value}>
+                {console.log(option.value)}
+              </MenuItem>
+            ))
+          : false} */}
+        {statuses.map((option) => (
+          <Select
+            key={option.key}
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={option.value}
+            label={props.label}
+            onChange={props.onChange}
+          >
+            <MenuItem value={option.value}>{option.value}</MenuItem>
+          </Select>
         ))}
       </CssTextField>
 

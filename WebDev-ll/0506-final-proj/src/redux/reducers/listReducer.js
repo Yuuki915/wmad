@@ -1,23 +1,23 @@
-const initialState = [
+const initialData = [
   {
     id: 1,
     title: "sbf",
-    state: "open",
+    status: "released",
+    release: 123769,
+    newVol: 123214,
     url: "f;jebfhlkajsdfolw",
-    created: 123769,
-    updated: 123214,
   },
   {
     id: 2,
     title: "klajh",
-    state: "open",
+    status: "comming soon",
+    release: 123769,
+    newVol: 123214,
     url: "f;jebfhlkajsdfolw",
-    created: 123769,
-    updated: 123214,
   },
 ];
 
-const listReducer = (state = initialState, action) => {
+const listReducer = (state = initialData, action) => {
   switch (action.type) {
     default:
       return state;

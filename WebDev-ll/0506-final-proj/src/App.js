@@ -1,6 +1,7 @@
-import react, { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import { Header, Filter, Lists } from "./templates";
+import { Header, Filter } from "./templates";
+
 import AddInputCards from "./component/AddInputCards";
 // import EditInputCards from "./component/EditInputCards";
 

@@ -1,15 +1,15 @@
 import React from "react";
-import AddIcon from "@mui/icons-material/Add";
-import List from "./List";
+// import AddIcon from "@mui/icons-material/Add";
+// import List from "./List";
 
 export default function Lists() {
-  const lists = ["Id", "Title", "State", "Url", "Created at", "Updated at"];
+  // const lists = ["Id", "Title", "status", "Url", "Created at", "Updated at"];
 
   const listsObj = [
     {
       id: "Id",
       title: "a",
-      state: "s",
+      status: "s",
     },
     {},
   ];
@@ -20,7 +20,7 @@ export default function Lists() {
           <div className="lists">
             <div>{e.id}</div>
             <div>{e.title}</div>
-            <div>{e.state}</div>
+            <div>{e.status}</div>
           </div>
         ))}
         {/* {lists.map((list) => (

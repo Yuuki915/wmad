@@ -4,9 +4,11 @@ import { MenuItem, TextField } from "@mui/material";
 
 const states = [
   {
+    key: 1,
     value: "Released",
   },
   {
+    key: 2,
     value: "Comming soon",
   },
 ];
@@ -21,9 +23,9 @@ export default function EditInputCard() {
     },
   });
 
-  const [state, setState] = useState("state");
+  const [status, setStatus] = useState("status");
   const handleChange = (event) => {
-    setState(event.target.value);
+    setStatus(event.target.value);
     console.log(event.target.value);
   };
 
@@ -60,8 +62,8 @@ export default function EditInputCard() {
         fullWidth
         select
         id="standard-select-currency"
-        label="State"
-        value={state}
+        label="Status"
+        value={status}
         variant="standard"
         className="input-card"
         sx={{

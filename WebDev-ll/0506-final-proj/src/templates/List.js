@@ -5,7 +5,7 @@ export default function List() {
     {
       id: "Id",
       title: "a",
-      state: "s",
+      status: "s",
     },
     {},
   ];
@@ -15,7 +15,7 @@ export default function List() {
         <div className="lists">
           <div>{e.id}</div>
           <div>{e.title}</div>
-          <div>{e.state}</div>
+          <div>{e.status}</div>
         </div>
       ))}
     </div>
