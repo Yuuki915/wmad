@@ -13,10 +13,10 @@ import {
 export default function AddInputCards(props) {
   const [id, setId] = useState(Number);
   const [title, setTitle] = useState("");
+  const [vol, setVol] = useState("");
   const [status, setStatus] = useState("");
   const [release, setRelease] = useState("");
   const [newVol, setNewVol] = useState("");
-  const [url, setUrl] = useState("");
 
   const options = {
     ids: {
@@ -32,32 +32,30 @@ export default function AddInputCards(props) {
       value: title,
       variant: "standard",
     },
+    vol: {
+      required: false,
+      id: "standard-required",
+      label: "Vol",
+      value: vol,
+      variant: "standard",
+    },
     states: {
-      id: "standard-select-currency",
+      id: "standard-required",
       label: "State",
-      defaultValue: status,
+      value: status,
       variant: "standard",
     },
     releases: {
       id: "standard-required",
-      required: false,
       label: "Released at",
-      defaultValue: release,
+      value: release,
       variant: "standard",
     },
     nexts: {
-      required: false,
       id: "standard-required",
       label: "New vol",
-      defaultValue: newVol,
       variant: "standard",
-    },
-    urls: {
-      required: false,
-      id: "standard-required",
-      label: "Official URL",
-      defaultValue: url,
-      variant: "standard",
+      label: "New vol",
     },
   };
 
@@ -85,10 +83,10 @@ export default function AddInputCards(props) {
     const data = {
       id: addInfos[addInfos.length - 1].id + 1,
       title,
+      vol,
       status,
       release,
       newVol,
-      url,
     };
     dispatch({ type: "ADD_INPUT", payload: data });
     alert("Data added successfly!!");
@@ -103,10 +101,10 @@ export default function AddInputCards(props) {
     props.setBg("");
     setId("");
     setTitle("");
+    setVol("");
     setStatus("");
     setRelease("");
     setNewVol("");
-    setUrl("");
   };
 
   return (
@@ -140,6 +138,19 @@ export default function AddInputCards(props) {
         onChange={(e) => setTitle(e.target.value)}
       />
 
+      <TextField
+        className="input-card"
+        fullWidth
+        sx={{
+          mb: 2,
+        }}
+        id={options.vol.id}
+        label={options.vol.label}
+        variant={options.vol.variant}
+        value={vol}
+        onChange={(e) => setVol(e.target.value)}
+      />
+
       <FormControl fullWidth required>
         <InputLabel>Status</InputLabel>
         <Select
@@ -167,6 +178,7 @@ export default function AddInputCards(props) {
         label={options.releases.label}
         variant={options.releases.variant}
         value={release}
+        type="date"
         onChange={(e) => setRelease(e.target.value)}
       />
 
@@ -181,19 +193,6 @@ export default function AddInputCards(props) {
         variant={options.nexts.variant}
         value={newVol}
         onChange={(e) => setNewVol(e.target.value)}
-      />
-
-      <TextField
-        className="input-card"
-        fullWidth
-        sx={{
-          mb: 2,
-        }}
-        id={options.urls.id}
-        label={options.urls.label}
-        variant={options.urls.variant}
-        value={url}
-        onChange={(e) => setUrl(e.target.value)}
       />
 
       <Stack direction="row" spacing={2}>

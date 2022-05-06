@@ -37,10 +37,10 @@ function App() {
   const listTitles = [
     "ID",
     "Title",
+    "Vol",
     "Status",
     "Release at",
     "New volume",
-    "URL",
     <AddIcon onClick={() => addHandler()} />,
   ];
   const listInfo = useSelector((state) => state);
@@ -74,13 +74,13 @@ function App() {
                 }
               })
               .map((val, key) => (
-                <tr key={key} editIdFinder={val.id}>
+                <tr key={key}>
                   <td>{val.id}</td>
                   <td>{val.title}</td>
+                  <td>{val.vol}</td>
                   <td>{val.status}</td>
                   <td>{val.release}</td>
                   <td>{val.newVol}</td>
-                  <td>{val.url}</td>
                   <td>
                     <EditIcon onClick={() => editHandler()}></EditIcon>
                   </td>

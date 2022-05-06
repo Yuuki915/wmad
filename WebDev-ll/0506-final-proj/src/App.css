@@ -43,6 +43,9 @@
 .list-table th {
   padding: 1rem;
 }
+.list-table td {
+  padding: 0.5rem 0;
+}
 
 /* ------ */
 

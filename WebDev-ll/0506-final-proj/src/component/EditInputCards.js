@@ -14,10 +14,10 @@ import { Contactless } from "@mui/icons-material";
 export default function EditInputCards(props) {
   const [id, setId] = useState(Number);
   const [title, setTitle] = useState("");
+  const [vol, setVol] = useState("");
   const [status, setStatus] = useState("");
   const [release, setRelease] = useState("");
   const [newVol, setNewVol] = useState("");
-  const [url, setUrl] = useState("");
 
   const itemInfo = useSelector((state) => state);
   // const currentItem = itemInfo.find(
@@ -30,10 +30,10 @@ export default function EditInputCards(props) {
       // console.log(currentItem);
       setId(currentItem.id);
       setTitle(currentItem.title);
+      setVol(currentItem.vol);
       setStatus(currentItem.status);
       setRelease(currentItem.release);
       setNewVol(currentItem.newVol);
-      setUrl(currentItem.url);
     }
   }, [currentItem]);
 
@@ -51,31 +51,31 @@ export default function EditInputCards(props) {
       value: title,
       variant: "standard",
     },
+    vols: {
+      required: false,
+      id: "standard-required",
+      label: "Vol",
+      value: vol,
+      variant: "standard",
+    },
     states: {
       id: "standard-select-currency",
       label: "State",
-      defaultValue: status,
+      value: status,
       variant: "standard",
     },
     releases: {
       id: "standard-required",
       required: false,
       label: "Released at",
-      defaultValue: release,
+      value: release,
       variant: "standard",
     },
     nexts: {
       required: false,
       id: "standard-required",
       label: "New vol",
-      defaultValue: newVol,
-      variant: "standard",
-    },
-    urls: {
-      required: false,
-      id: "standard-required",
-      label: "Official URL",
-      defaultValue: url,
+      value: newVol,
       variant: "standard",
     },
   };
@@ -110,10 +110,10 @@ export default function EditInputCards(props) {
     const data = {
       id: editInfos[editInfos.length - 1].id + 1,
       title,
+      vol,
       status,
       release,
       newVol,
-      url,
     };
     dispatch({ type: "EDIT_INPUT", payload: data });
     alert("Data edited successfly!!");
@@ -128,10 +128,10 @@ export default function EditInputCards(props) {
     props.setBg("");
     setId("");
     setTitle("");
+    setVol("");
     setStatus("");
     setRelease("");
     setNewVol("");
-    setUrl("");
   };
 
   return (
@@ -164,6 +164,19 @@ export default function EditInputCards(props) {
         variant={options.titles.variant}
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+      />
+
+      <TextField
+        className="input-card"
+        fullWidth
+        sx={{
+          mb: 2,
+        }}
+        id={options.vols.id}
+        label={options.vols.label}
+        variant={options.vols.variant}
+        value={vol}
+        onChange={(e) => setVol(e.target.value)}
       />
 
       <FormControl fullWidth required>
@@ -207,19 +220,6 @@ export default function EditInputCards(props) {
         variant={options.nexts.variant}
         value={newVol}
         onChange={(e) => setNewVol(e.target.value)}
-      />
-
-      <TextField
-        className="input-card"
-        fullWidth
-        sx={{
-          mb: 2,
-        }}
-        id={options.urls.id}
-        label={options.urls.label}
-        variant={options.urls.variant}
-        value={url}
-        onChange={(e) => setUrl(e.target.value)}
       />
 
       <Stack direction="row" spacing={2}>
