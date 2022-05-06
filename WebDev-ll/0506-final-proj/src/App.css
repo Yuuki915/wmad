@@ -37,7 +37,20 @@
   min-width: 3rem;
 }
 
+.list-table {
+  margin: 0 auto;
+}
+.list-table th {
+  padding: 1rem;
+}
+
 /* ------ */
+
+.input-card {
+  width: 100%;
+  margin: 2rem auto;
+}
+
 .input-cards {
   text-align: left;
   width: 40%;
@@ -45,23 +58,17 @@
   border-radius: 5px;
   padding: 2rem;
   background-color: #fff;
-  opacity: 0;
+  display: none;
 }
-.input-card {
-  width: 100%;
-  display: block;
-  margin: 2rem auto;
-}
-button {
-  color: #333;
-  background-color: #fff;
-}
-
 .add-cards,
 .edit-cards {
-  opacity: 1;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: block;
+}
+button {
+  color: #333;
+  background-color: #fff;
 }
