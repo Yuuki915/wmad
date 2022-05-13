@@ -203,9 +203,10 @@ export default function EditInputCards(props) {
           mb: 2,
         }}
         id={options.releases.id}
-        label={options.releases.label}
+        // label={options.releases.label}
         variant={options.releases.variant}
         value={release}
+        type="date"
         onChange={(e) => setRelease(e.target.value)}
       />
 
