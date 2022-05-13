@@ -3,10 +3,10 @@ const router = express.Router();
 
 router.get("/leave-note", (req, res, next) => {
   res.send(`
-        <h1>Leave a note</h1>
+        <h1>Leave a Note</h1>
         <form action="/read" method="POST">
             <input type="text" name="message" />
-            <button type="submit">Leave notes</button>
+            <button type="submit">Send</button>
         </form>
     `);
 });
