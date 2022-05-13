@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { createStore } from "redux";
-import listReducer from "./redux/list/listReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
+import listReducer from "./redux/reducers/listReducer";
 import { Provider } from "react-redux";
 // import { configureStore } from "@reduxjs/toolkit";
 

@@ -54,8 +54,8 @@ export default function AddInputCards(props) {
     nexts: {
       id: "standard-required",
       label: "New vol",
+      value: newVol,
       variant: "standard",
-      label: "New vol",
     },
   };
 
@@ -175,7 +175,7 @@ export default function AddInputCards(props) {
           mb: 2,
         }}
         id={options.releases.id}
-        label={options.releases.label}
+        // label={options.releases.label}
         variant={options.releases.variant}
         value={release}
         type="date"
