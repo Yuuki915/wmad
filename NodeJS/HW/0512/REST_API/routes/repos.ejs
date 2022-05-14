@@ -1,0 +1,16 @@
+<% if(repos.length === 0){ %>
+
+<h1>No members</h1>
+
+<% } else { %>
+<ul>
+  <% repos.forEach(member => { %>
+  <li>
+    <p>ID: <%= member.id %></p>
+    <h4><%= member.name %></h4>
+    <p>Email: <%= member.email %></p>
+  </li>
+  <hr />
+  <% })%>
+</ul>
+<% } %>
