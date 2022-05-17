@@ -1,12 +1,21 @@
+const uuid = require("uuid");
 const router = require("express").Router();
-const db = require("../services/dbsqlite");
+const { client } = require("../services/redis");
 
-router.get("/", (req, res) => {
-  const sql = "SELECT * FROM Todos ORDER BY Title";
-  db.all(sql, [], (err, rows) => {
-    if (err) return console.error(err.message);
-    res.render("index", { model: rows });
-  });
+router.get("/", async (req, res) => {
+  try {
+    const todos = [];
+    // const todos = await client.hGetAll('todos')
+    // console.log(todos);
+
+    for await (const { field, value } of client.hScanIterator("todos")) {
+      todos.push({ ID: field, Title: value });
+    }
+
+    res.render("index", { model: todos });
+  } catch (e) {
+    console.error(e);
+  }
 });
 
 // --- create ---
@@ -14,47 +23,30 @@ router.get("/create", (req, res) => {
   res.render("create", { model: {} });
 });
 
-router.post("/create", (req, res) => {
-  const sql = "INSERT INTO Todos (Title) VALUES (?)";
-  const todo = [req.body.Title];
-
-  db.run(sql, todo, (err) => {
-    if (err) return console.error(err.message);
-
-    res.redirect("/");
-  });
+router.post("/create", async (req, res) => {
+  await client.hSet("todos", uuid.v4(), req.body.Title);
+  res.redirect("/");
 });
+
+module.exports = router;
 
 // --- edit ---
-router.get("/edit/:id", (req, res) => {
-  const sql = "SELECT * FROM Todos WHERE ID = ?";
-  const id = req.params.id;
-  db.get(sql, id, (err, rows) => {
-    if (err) return console.error(err.message);
-    res.render("edit", { model: { rows } });
-  });
+router.get("/edit/:id", async (req, res) => {
+  const editId = req.params.id;
+  const editTitle = await client.hGet("todos", editId);
+  res.render("edit", { model: { Title: editTitle, ID: id } });
 });
-
-router.post("/edit/:id", (req, res) => {
-  const id = req.params.id;
-  const sql = `UPDATE Todos SET Title = ? WHERE ID = ${id}`;
-  const todo = [req.body.Title];
-
-  db.run(sql, todo, (err) => {
-    if (err) return console.error(err.message);
-
-    res.redirect("/");
-  });
+router.post("/edit/:id", async (req, res) => {
+  const editId = req.params.id;
+  await client.hSet("todos", editId, req.body.Title);
+  res.redirect("/");
 });
 
 // --- delete ---
-router.get("/delete/:id", (req, res) => {
-  const sql = `DELETE FROM Todos WHERE ID = ?`;
-  const id = req.params.id;
-  db.run(sql, id, (err) => {
-    if (err) return console.error(err.message);
-    res.redirect("/");
-  });
+router.get("/delete:id", async (req, res) => {
+  const deleteId = req.params.id;
+  client.hDel("todos", deleteId);
+  res.redirect("/");
 });
 
 module.exports = router;
