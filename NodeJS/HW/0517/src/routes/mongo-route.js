@@ -32,6 +32,7 @@ router.post("/edit/:id", async (req, res) => {
 
 router.delete("/delete/:id", async (req, res) => {
   const db = mongoConnect();
+  // db.collection("todos").
 });
 
 module.exports = router;

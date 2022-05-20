@@ -6,12 +6,12 @@ MongoClient.connect(url, (err, db) => {
   if (err) throw err;
   const dbo = db.db("aaa-test");
 
-  //create collection
-  // dbo.createCollection('people', (err, res) => {
-  //     if(err) throw err
-  //     console.log('Collection Created!');
-  //     db.close()
-  // })
+  // create collection
+  // dbo.createCollection("people", (err, res) => {
+  //   if (err) throw err;
+  //   console.log("Collection Created!");
+  //   db.close();
+  // });
 
   //insert into collection
   // const myOject = { name: 'hoge', email: 'hoge@hoge.com' }
