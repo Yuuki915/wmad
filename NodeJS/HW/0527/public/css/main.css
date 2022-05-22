@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.add-btn a {
+  width: 7rem;
+  text-align: center;
+  border: 1px solid #666;
+  border-radius: 50px;
+  background-color: #666;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.blog {
+  margin-top: 3rem;
+  width: 300px;
+}
+
+.created-time {
+  font-size: 11px;
+}
