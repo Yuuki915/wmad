@@ -24,3 +24,10 @@
 .created-time {
   font-size: 11px;
 }
+
+.input-container {
+  width: 20%;
+}
+.label {
+  display: block;
+}
