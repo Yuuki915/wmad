@@ -1,8 +1,12 @@
 const express = require("express");
-const app = express();
+const mongoose = require("mongoose");
 const blogRouter = require("./routes/blogs");
+const app = express();
+
+mongoose.connect("mongodb://localhost:27017/0527-mid-proj");
 
 app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
   const blogs = [
