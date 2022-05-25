@@ -1,4 +1,7 @@
 const mongoose = require("mongoose");
+const slug = require("mongoose-slug-generator");
+
+mongoose.plugin(slug);
 
 const blogSchema = new mongoose.Schema({
   title: {
@@ -11,6 +14,12 @@ const blogSchema = new mongoose.Schema({
   timeCreated: {
     type: Date,
     default: () => Date.now(),
+  },
+  slug: {
+    type: String,
+    slug: "title",
+    unique: true,
+    slug_padding_size: 2,
   },
 });
 
