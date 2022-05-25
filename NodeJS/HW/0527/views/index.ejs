@@ -11,14 +11,33 @@
   <body>
     <h1>Welcome to My Blog</h1>
 
-    <div class="add-btn"><a href="blogs/new">Add Blog</a></div>
+    <a href="blogs/new"><div class="add-btn">Add Blog</div></a>
 
-    <% blogs.forEach(blog => {%>
-    <div class="blog">
-      <h3><%= blog.title %></h3>
-      <div class="created-time"><%= blog.createdAt.toLocaleDateString() %></div>
-      <p><%= blog.snippet %></p>
+    <div class="blogs-container">
+      <% blogs.forEach(blog => {%>
+      <div class="blog">
+        <a href="blogs/<%= blog.slug %>"> >> read >> </a>
+        <h3><%= blog.title %></h3>
+
+        <div class="created-time">
+          <%= blog.timeCreated.toLocaleDateString() %>
+        </div>
+
+        <p><%= blog.snippet %></p>
+
+        <div class="btns">
+          <div class="btn">
+            <a href="blogs/edit/<%= blog.id %>">Edit</a>
+          </div>
+          <div class="btn">
+            <form action="/blogs/<%= blog.id %>?_method=DELETE" method="POST">
+              <div class="btn">Delete</div>
+            </form>
+        </div>
+      </div>
+      <% }) %>
     </div>
-    <% }) %>
+
+    <!-- <script src="/js/index.js"></script> -->
   </body>
 </html>
