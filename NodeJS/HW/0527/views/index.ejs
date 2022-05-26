@@ -1,43 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/main.css" />
-    <title>Hey My Blog</title>
-  </head>
+<%- include("_header") %>
 
-  <body>
-    <h1>Welcome to My Blog</h1>
+<h1>Share Info</h1>
 
-    <a href="blogs/new"><div class="add-btn">Add Blog</div></a>
+<div class="add-btn"><a href="blogs/new">Add Blog</a></div>
 
-    <div class="blogs-container">
-      <% blogs.forEach(blog => {%>
-      <div class="blog">
-        <a href="blogs/<%= blog.slug %>"> >> read >> </a>
-        <h3><%= blog.title %></h3>
+<div class="blogs-container">
+  <% blogs.forEach(blog => {%>
+  <div class="blog">
+    <a href="blogs/<%= blog.slug %>"> >> read >> </a>
+    <h3><%= blog.title %></h3>
+    <p><%= blog.author %></p>
+    <div class="created-time"><%= blog.timeCreated.toLocaleDateString() %></div>
 
-        <div class="created-time">
-          <%= blog.timeCreated.toLocaleDateString() %>
-        </div>
+    <p><%= blog.snippet %></p>
 
-        <p><%= blog.snippet %></p>
+    <div class="btns">
+      <button class="btn">
+        <a href="blogs/edit/<%= blog.id %>">Edit</a>
+      </button>
 
-        <div class="btns">
-          <div class="btn">
-            <a href="blogs/edit/<%= blog.id %>">Edit</a>
-          </div>
-          <div class="btn">
-            <form action="/blogs/<%= blog.id %>?_method=DELETE" method="POST">
-              <div class="btn">Delete</div>
-            </form>
-        </div>
-      </div>
-      <% }) %>
+      <form action="/blogs/<%=blog.id%>?_method=DELETE" method="POST">
+        <button class="btn">Delete</button>
+      </form>
     </div>
+  </div>
+  <% }) %>
+</div>
 
-    <!-- <script src="/js/index.js"></script> -->
-  </body>
-</html>
+<!-- <script src="/js/index.js"></script> -->
+
+<%- include("_footer") %>

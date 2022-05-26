@@ -19,6 +19,7 @@ router.get("/:slug", async (req, res) => {
 router.post("/", async (req, res) => {
   let blog = new Blog({
     title: req.body.title,
+    author: req.body.author,
     body: req.body.body,
   });
 
@@ -55,5 +56,9 @@ router.delete("/:id", async (req, res) => {
   await Blog.findByIdAndDelete(req.params.id);
   res.redirect("/");
 });
+// router.delete("/:id", async (req, res) => {
+//   await Blog.findByIdAndDelete(req.params.id);
+//   res.redirect("/");
+// });
 
 module.exports = router;
