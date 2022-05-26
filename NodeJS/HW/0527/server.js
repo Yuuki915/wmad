@@ -32,6 +32,7 @@ app.get("/", async (req, res) => {
 // });
 
 app.use(express.static("public"));
+app.use("/css", express.static(__dirname + "public/css"));
 app.use("/blogs", blogRouter);
 
 app.listen(5000);

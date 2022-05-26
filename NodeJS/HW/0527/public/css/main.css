@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,14 +8,16 @@ a {
   color: #333;
 }
 
-.add-btn {
-  width: 7rem;
+body {
   text-align: center;
+}
+.add-btn a {
+  width: 7rem;
   border: 1px solid #666;
   border-radius: 50px;
   background-color: #666;
   color: #fff;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
 }
 
@@ -26,7 +28,6 @@ a {
 .blog {
   width: 300px;
   margin: 1.5rem auto;
-  text-align: center;
 }
 
 .created-time {
@@ -35,6 +36,7 @@ a {
 
 .input-container {
   width: 20%;
+  text-align: center;
 }
 .label {
   display: block;
@@ -44,7 +46,16 @@ a {
   display: flex;
   justify-content: center;
 }
-
+.btn {
+  width: 6rem;
+  border: 1px solid #666;
+  border-radius: 50px;
+  background-color: #666;
+  padding: 0.3rem 1rem;
+  font-size: 12px;
+  color: #fff;
+  cursor: pointer;
+}
 .btn a {
   width: 7rem;
   border: 1px solid #666;
@@ -54,4 +65,4 @@ a {
   font-size: 12px;
 
   color: #fff;
-}
+} */
