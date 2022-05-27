@@ -24,12 +24,17 @@ const blogSchema = new mongoose.Schema({
     type: Date,
     default: () => Date.now(),
   },
-  // snippet: {
-  //   type: String,
-  // },
   img: {
     type: String,
     default: "placeholder.jpg",
+  },
+  placeName: {
+    type: String,
+    required: true,
+  },
+  country: {
+    type: String,
+    required: true,
   },
   slug: {
     type: String,

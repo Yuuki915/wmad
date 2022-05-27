@@ -5,14 +5,13 @@
 
 <div class="show">
   <div class="bb-posi">
-    <button class="btn back-btn"><a href="/">Back</a></button>
+    <button><a href="/" class="back-btn">Back</a></button>
   </div>
 
   <div class="blog-detail">
     <h1 class="show-title"><%= blog.title %></h1>
     <h6 class="show-time"><%= blog.timeCreated.toLocaleDateString() %></h6>
     <div class="author-info">
-      <img src="/uploads/<%= blog.img %>" alt="author-img" />
       <p class="show-auth">@<%= blog.author %></p>
     </div>
 
@@ -25,9 +24,17 @@
     </div>
 
     <div class="show-img">
-      <img src="/uploads/<%= blog.img %>" alt="show-img" />
+      <img src="/uploads/imgs/<%= blog.img %>" alt="show-img" />
     </div>
 
+    <div class="show-place">
+      <p>My favorite place is ...</p>
+      <p><%- blog.placeName %></p>
+    </div>
+    <div class="show-country">
+      <p>In</p>
+      <p><%- blog.country %></p>
+    </div>
     <p class="show-body"><%- blog.body %></p>
   </div>
 </div>
