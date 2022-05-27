@@ -1,29 +1,32 @@
 <%- include("_header") %>
 
-<h1>Share Info</h1>
+<div class="siteimg">
+  <!-- <img src="/imgs/top.jpg" alt="top" /> -->
+</div>
+<p class="site-title">ShareLog</p>
 
-<div class="add-btn"><a href="blogs/new">Add Blog</a></div>
+<p class="subtitle">Share a day in your life</p>
 
-<div class="blogs-container">
+<div class="btn-container">
+  <button class="btn add-btn"><a href="blogs/new">Add Blog</a></button>
+</div>
+
+<div class="blogs">
   <% blogs.forEach(blog => {%>
-  <div class="blog">
-    <a href="blogs/<%= blog.slug %>"> >> read >> </a>
-    <h3><%= blog.title %></h3>
-    <p><%= blog.author %></p>
-    <div class="created-time"><%= blog.timeCreated.toLocaleDateString() %></div>
+  <a href="blogs/<%= blog.slug %>" class="read-btn">
+    <div class="blog-container">
+      <div class="blog">
+        <div class="title-auth">
+          <div class="blog-title"><%= blog.title %></div>
+          <div class="blog-author">@<%= blog.author %></div>
+        </div>
 
-    <p><%= blog.snippet %></p>
-
-    <div class="btns">
-      <button class="btn">
-        <a href="blogs/edit/<%= blog.id %>">Edit</a>
-      </button>
-
-      <form action="/blogs/<%=blog.id%>?_method=DELETE" method="POST">
-        <button class="btn">Delete</button>
-      </form>
+        <div class="blog-created-time">
+          <%= blog.timeCreated.toLocaleDateString() %>
+        </div>
+      </div>
     </div>
-  </div>
+  </a>
   <% }) %>
 </div>
 

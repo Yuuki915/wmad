@@ -1,9 +1,34 @@
 <%- include("_header") %>
-<!-- <div> -->
-<div class="btn"><a href="/">Back</a></div>
-<h1><%= blog.title %></h1>
-<p><%= blog.author %></p>
-<h6><%= blog.timeCreated.toLocaleDateString() %></h6>
-<p><%= blog.body %></p>
-<!-- </div> -->
+<div class="header">
+  <p>ShareLog</p>
+</div>
+
+<div class="show">
+  <div class="bb-posi">
+    <button class="btn back-btn"><a href="/">Back</a></button>
+  </div>
+
+  <div class="blog-detail">
+    <h1 class="show-title"><%= blog.title %></h1>
+    <h6 class="show-time"><%= blog.timeCreated.toLocaleDateString() %></h6>
+    <div class="author-info">
+      <img src="/uploads/<%= blog.img %>" alt="author-img" />
+      <p class="show-auth">@<%= blog.author %></p>
+    </div>
+
+    <div class="btns">
+      <a href="edit/<%= blog.id %>" class="btn edit-btn">Edit</a>
+
+      <form action="/blogs/<%= blog.id %>?_method=DELETE" method="POST">
+        <button class="btn del-btn">Delete</button>
+      </form>
+    </div>
+
+    <div class="show-img">
+      <img src="/uploads/<%= blog.img %>" alt="show-img" />
+    </div>
+
+    <p class="show-body"><%- blog.body %></p>
+  </div>
+</div>
 <%- include("_footer") %>
