@@ -5,30 +5,45 @@
 </div>
 <p class="site-title">ShareLog</p>
 
-<p class="subtitle">Share a day in your life</p>
+<p class="subtitle">Share the place you like</p>
 
 <div class="btn-container">
-  <button class="btn add-btn"><a href="blogs/new">Add Blog</a></button>
+  <button class="btn add-btn"><a href="blogs/new">Add Place</a></button>
 </div>
+
+<% if(blogs.length < 1) { %>
+<p class="nopost">No post yet.</p>
+<% } else{ %>
 
 <div class="blogs">
   <% blogs.forEach(blog => {%>
   <a href="blogs/<%= blog.slug %>" class="read-btn">
+    <div class="box-img">
+      <img src="/uploads/imgs/<%= blog.img %>" alt="" />
+    </div>
     <div class="blog-container">
       <div class="blog">
-        <div class="title-auth">
+        <div class="box-top">
           <div class="blog-title"><%= blog.title %></div>
-          <div class="blog-author">@<%= blog.author %></div>
         </div>
 
-        <div class="blog-created-time">
-          <%= blog.timeCreated.toLocaleDateString() %>
+        <div class="box-bottom">
+          <!-- <div class="box-img">
+            <img src="/uploads/<%= blog.img %>" alt="" />
+          </div> -->
+          <div>
+            <div class="blog-author">@<%= blog.author %></div>
+            <div class="blog-created-time">
+              <%= blog.timeCreated.toLocaleDateString() %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </a>
   <% }) %>
 </div>
+<% } %>
 
 <!-- <script src="/js/index.js"></script> -->
 
