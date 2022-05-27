@@ -1,68 +1,338 @@
-/* * {
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Exo+2:wght@400;500&family=Karla:wght@300&family=Titillium+Web&display=swap");
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Exo 2", sans-serif;
+  letter-spacing: 3px;
+}
+body {
+  text-align: center;
+  color: #555;
+}
+
+/* 
+    general 
+*/
+input,
+textarea {
+  width: 100%;
+  height: 2rem;
+}
+textarea {
+  width: 100%;
+  height: 10rem;
+}
+label {
+  display: block;
+  text-align: left;
+}
+
+/* 
+    layout 
+*/
+.blogs-container,
+.show {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/*  
+    btns 
+*/
+.btn {
+  width: 6rem;
+  border: none;
+  border-radius: 50px;
+  background-color: #999;
+  padding: 0.5rem 1.3rem;
+  font-size: 13px;
+  color: #fff;
+  cursor: pointer;
 }
 a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
+  display: inline-block;
 }
 
-body {
-  text-align: center;
+.save-btn,
+.can-btn,
+.edit-btn,
+.del-btn,
+.back-btn {
+  transition: 0.3s;
+  opacity: 0.2;
+}
+.save-btn:hover {
+  background-color: rgb(125, 185, 165);
+  opacity: 1;
+}
+.can-btn:hover {
+  background-color: rgb(249, 207, 156);
+  opacity: 1;
+}
+.edit-btn:hover {
+  background-color: rgb(125, 185, 165);
+  opacity: 1;
+}
+.del-btn:hover {
+  background-color: rgb(245, 132, 132);
+  opacity: 1;
+}
+.back-btn:hover {
+  background-color: rgb(249, 207, 156);
+  opacity: 1;
+}
+.bb-posi {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+}
+.btns {
+  display: flex;
+  justify-content: right;
+  margin-top: 1rem;
+}
+
+/* 
+    top index / imgs 
+*/
+.siteimg {
+  width: 100vw;
+
+  height: 50vh;
+  background: linear-gradient(
+    90deg,
+    rgb(231, 196, 193) 0%,
+    rgb(231, 196, 193) 50%,
+    rgb(201, 223, 219) 50%,
+    rgb(201, 223, 219) 100%
+  );
+}
+.site-title {
+  font-family: "Comfortaa", cursive;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.3);
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  padding: 2rem 5rem;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+}
+.subtitle {
+  margin: 2rem;
+  padding: 3rem;
+}
+
+/*  
+    top index / add btn  
+*/
+.add-btn {
+  width: 100%;
+  background-color: #fff;
+  border: none;
 }
 .add-btn a {
-  width: 7rem;
-  border: 1px solid #666;
-  border-radius: 50px;
-  background-color: #666;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 220px;
+  padding: 1rem;
+  color: #555;
+  transition: 0.3s ease-in-out;
+  font-weight: 600;
+}
+.add-btn a:before,
+.add-btn a:after {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  content: "";
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #555;
+}
+
+.add-btn a:before {
+  top: 0;
+  left: 0;
+}
+
+.add-btn a:after {
+  right: 0;
+  bottom: 0;
+}
+
+.add-btn a:hover {
   color: #fff;
-  padding: 0.5rem 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background: linear-gradient(
+    -45deg,
+    rgb(231, 196, 193) 0%,
+    rgb(231, 196, 193) 50%,
+    rgb(201, 223, 219) 50%,
+    rgb(201, 223, 219) 100%
+  );
+}
+
+.add-btn a:hover:before,
+.add-btn a:hover:after {
+  width: 0;
+}
+
+/*
+    top index / blogs 
+*/
+.blogs {
+  max-width: 80%;
+  max-height: auto;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.blog-container {
+  position: relative;
+  max-width: 300px;
+  max-height: 180px;
+  height: 100%;
+  padding: 1rem;
+
+  transition: 0.3s;
+}
+.blog-container::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 85%;
+  border: 1px solid #333;
+  transition: 0.3s;
+}
+.blog-container:hover::after {
+  border: 1px solid #fff;
+}
+.blog-container:hover {
+  color: #fff;
+  background-color: rgb(164, 212, 196);
   cursor: pointer;
 }
-
-.blogs-container {
-  margin-top: 3rem;
-}
-
 .blog {
-  width: 300px;
-  margin: 1.5rem auto;
+  width: 250px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.created-time {
-  font-size: 11px;
+.title-auth {
+  width: 100%;
+}
+.blog-title {
+  max-width: 100%;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.blog-created-time {
+  width: 100%;
+  font-size: 0.7rem;
+  margin-top: 1rem;
+}
+.blog-author {
+  width: 100%;
+  font-size: 1rem;
+}
+.read-btn {
+  color: #333;
+  margin: 1rem;
 }
 
+/*
+    new blog
+*/
+.new-blog {
+  width: 70%;
+  margin: 5rem auto;
+}
+
+/* 
+    show 
+*/
+.show-img {
+  margin: 2rem;
+}
+.show-img img {
+  width: 80%;
+}
+.blog-detail {
+  width: 70%;
+  margin: 5rem auto;
+}
+.show-title {
+  text-align: left;
+}
+.show-time {
+  text-align: right;
+}
+.author-info {
+  display: flex;
+  align-items: center;
+}
+.author-info img {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+.show-auth {
+  text-align: left;
+  padding-left: 1rem;
+}
+.show-body {
+  margin: 2rem 1rem;
+}
+
+/*  
+    add  edit  del  
+*/
 .input-container {
-  width: 20%;
-  text-align: center;
+  width: 80%;
+  margin: 1rem auto;
+}
+.input-container input,
+.input-container textarea {
+  width: 100%;
 }
 .label {
   display: block;
 }
 
-.btns {
-  display: flex;
-  justify-content: center;
+/* 
+    header & footer 
+*/
+.header {
+  padding: 2rem;
 }
-.btn {
-  width: 6rem;
-  border: 1px solid #666;
-  border-radius: 50px;
-  background-color: #666;
-  padding: 0.3rem 1rem;
-  font-size: 12px;
-  color: #fff;
-  cursor: pointer;
+.header p {
+  text-align: left;
 }
-.btn a {
-  width: 7rem;
-  border: 1px solid #666;
-  border-radius: 50px;
-  background-color: #666;
-  padding: 0.3rem 1rem;
-  font-size: 12px;
-
-  color: #fff;
-} */
+.footer {
+  padding: 1rem 0;
+}

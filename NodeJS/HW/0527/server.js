@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const blogRouter = require("./routes/blogs");
@@ -32,7 +33,8 @@ app.get("/", async (req, res) => {
 // });
 
 app.use(express.static("public"));
-app.use("/css", express.static(__dirname + "public/css"));
+// app.use("/css", express.static(__dirname + "public/css"));
+app.use(express.static(path.join(__dirname, "public")));
 app.use("/blogs", blogRouter);
 
 app.listen(5000);

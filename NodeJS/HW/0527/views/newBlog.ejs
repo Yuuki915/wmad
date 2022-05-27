@@ -1,26 +1,30 @@
 <%- include("_header") %>
+<div class="header">
+  <p>ShareLog</p>
+</div>
+<div class="new-blog">
+  <h1>Write New Blog</h1>
 
-<h1>Write New Blog</h1>
+  <form action="/blogs" method="POST">
+    <div class="input-container">
+      <label for="title" class="label">Title</label>
+      <input type="text" name="title" required />
+    </div>
 
-<form action="/blogs" method="POST">
-  <div class="input-container">
-    <label for="title" class="label">Title</label>
-    <input type="text" name="title" required />
-  </div>
+    <div class="input-container">
+      <label for="author" class="label">Author</label>
+      <input type="text" name="author" required />
+    </div>
 
-  <div class="input-container">
-    <label for="author" class="label">Author</label>
-    <input type="text" name="author" required />
-  </div>
+    <div class="input-container">
+      <label for="body" class="label">Body</label>
+      <textarea type="text" name="body"></textarea>
+    </div>
 
-  <div class="input-container">
-    <label for="body" class="label">Body</label>
-    <textarea type="text" name="body"></textarea>
-  </div>
-
-  <div class="input-container">
-    <button class="can-btn"><a href="/">Cancel</a></button>
-    <button type="submit" class="save-btn">Save</button>
-  </div>
-</form>
+    <div class="input-container">
+      <a href="/" class="btn can-btn">Cancel</a>
+      <button type="submit" class="btn save-btn">Save</button>
+    </div>
+  </form>
+</div>
 <%- include("_footer") %>

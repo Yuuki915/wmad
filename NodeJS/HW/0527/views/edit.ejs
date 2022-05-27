@@ -1,5 +1,7 @@
 <%- include("_header") %>
-
+<div class="header">
+  <p>ShareLog</p>
+</div>
 <h1>Editing <%= blog.title %></h1>
 
 <form action="/blogs/<%= blog.id %>?_method=PUT" method="POST">
@@ -22,8 +24,8 @@
   </div>
 
   <div class="input-container">
-    <button class="can-btn"><a href="/">Cancel</a></button>
-    <button type="submit" class="save-btn">Edit</button>
+    <button class="btn can-btn"><a href="/">Cancel</a></button>
+    <button type="submit" class="btn save-btn">Edit</button>
   </div>
 </form>
 <%- include("_footer") %>
