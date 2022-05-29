@@ -48,7 +48,7 @@ router.post("/", upload.single("img"), async (req, res) => {
   try {
     blog = await blog.save();
 
-    res.redirect(`blogs/${blog.slug}`);
+    res.redirect(`/blogs/${blog.slug}`);
   } catch (error) {
     console.log(error);
   }
