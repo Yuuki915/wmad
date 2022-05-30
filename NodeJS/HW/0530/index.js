@@ -3,9 +3,7 @@ const Blog = require("./models/Blog");
 const User = require("./models/User");
 const Comment = require("./models/Comment");
 
-mongoose.connect(
-  "mongodb+srv://yuki:Yuuki5196@cluster0.vhzki.mongodb.net/?retryWrites=true&w=majority"
-);
+mongoose.connect();
 
 //Insert data
 const blogCreate = async () => {
