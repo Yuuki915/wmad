@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Blog = require("./models/Blog");
 const User = require("./models/User");
+const Comment = require("./models/Comment");
 
 mongoose.connect(
   "mongodb+srv://yuki:Yuuki5196@cluster0.vhzki.mongodb.net/?retryWrites=true&w=majority"
@@ -11,6 +12,15 @@ const blogCreate = async () => {
   const user = await User.create({
     name: "hoge",
     email: "hoge@hoge.com",
+  });
+  const user2 = await User.create({
+    name: "yuuki",
+    email: "yuuki@email.com",
+  });
+
+  const com1 = await Comment.create({
+    user: user2._id,
+    content: "Hi, it's Yuuki",
   });
 
   //method 1
@@ -30,6 +40,7 @@ const blogCreate = async () => {
     content: "This is a new post",
     tags: ["new", "featured"],
     author: user._id,
+    comments: [com1.content],
   });
 
   await article.save();
@@ -93,11 +104,11 @@ const blogUsefulMethods = async () => {
   console.log(blogWhere2);
 };
 
-// blogCreate();
+blogCreate();
 // blogFind();
 // blogFindOne();
 // blogFindOnewithUser();
-blogUpdate();
+// blogUpdate();
 // blogFindById();
 // blogDelete();
 // blogDeleteMany();
