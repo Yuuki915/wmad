@@ -22,14 +22,14 @@ const upload = multer({
 
 router.get("/", (req, res) => {
   if (req.isAuthenticated()) {
-    res.redirect("/");
+    res.redirect("/blogs");
   } else {
     res.render("home");
   }
 });
 router.get("/register", (req, res) => {
   if (req.isAuthenticated()) {
-    res.redirect("/");
+    res.redirect("/blogs");
   } else {
     res.render("auth/register");
   }
@@ -79,6 +79,23 @@ router.post("/blogs", upload.single("img"), async (req, res) => {
     console.log(error);
   }
 });
+// router.post("/blogs", upload.single("img"), async (req, res) => {
+//   let blog = new Blog({
+//     title: req.body.title,
+//     author: req.body.author,
+//     body: req.body.body,
+//     img: req.file.filename,
+//     placeName: req.body.placeName,
+//     country: req.body.country,
+//   });
+
+//   try {
+//     blog = await blog.save();
+//     res.redirect(`/blogs/${blog.slug}`);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// });
 
 // edit
 router.get("/blogs/edit/:id", async (req, res) => {

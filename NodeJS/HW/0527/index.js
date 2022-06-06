@@ -5,12 +5,12 @@ const mongoose = require("mongoose");
 
 const session = require("express-session");
 const passport = require("passport");
+const ejs = require("ejs");
 
-const authRoute = require("./routes/auth");
-const blogsRoute = require("./routes/blogs");
+const auRoute = require("./routes/au");
+const quoteRoute = require("./routes/quote");
 
 const methodOverride = require("method-override");
-
 const app = express();
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -33,7 +33,25 @@ mongoose
   .then(() => console.log("databbase connected!"))
   .catch((err) => console.log(err));
 
-app.use("/", authRoute);
-app.use("/", blogsRoute);
+//
+
+// いらない。。。？　→ いらない！！！！！
+// app.get("/", (req, res) => {
+//   res.render("index");
+// });
+// app.get("/register", (req, res) => {
+//   res.render("reg");
+// });
+// app.get("/login", (req, res) => {
+//   res.render("log");
+// });
+// app.get("/quotes", (req, res) => {
+//   res.render("quotes");
+// });
+
+//
+
+app.use("/", auRoute);
+app.use("/", quoteRoute);
 
 app.listen(process.env.PORT, () => console.log("Server is running!"));

@@ -1,39 +1,39 @@
 const router = require("express").Router();
 const passport = require("passport");
 
-const User = require("../models/User");
+const Us = require("../models/Us");
 
-passport.use(User.createStrategy());
+passport.use(Us.createStrategy());
 
 passport.serializeUser(function (user, done) {
   done(null, user.id);
 });
 passport.deserializeUser(function (id, done) {
-  User.findById(id, function (err, user) {
+  Us.findById(id, function (err, user) {
     done(err, user);
   });
 });
 
-router.post("/auth/register", async (req, res) => {
+router.post("/auth/reg", async (req, res) => {
   try {
-    const registerUser = await User.register(
+    const resisterUser = await Us.register(
       { username: req.body.username },
       req.body.password
     );
-    if (registerUser) {
+    if (resisterUser) {
       passport.authenticate("local")(req, res, () => {
-        res.redirect("/blogs");
+        res.redirect("/quotes");
       });
     } else {
-      res.redirect("/register");
+      res.redirect("/reg");
     }
-  } catch (err) {
-    res.send(err);
+  } catch (error) {
+    res.send(error);
   }
 });
 
-router.post("/auth/login", async (req, res) => {
-  const user = new User({
+router.post("/auth/log", async (req, res) => {
+  const user = new Us({
     username: req.body.username,
     password: req.body.password,
   });
