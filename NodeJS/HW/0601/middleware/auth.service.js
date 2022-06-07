@@ -19,7 +19,9 @@ const signin = async (email, password) => {
       email: user.email,
       name: user.name,
       token,
-    });
+    })
+  } else{
+      throw 
   }
 };
 
