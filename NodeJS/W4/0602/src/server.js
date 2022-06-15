@@ -3,13 +3,13 @@ require("express-async-errors");
 require("./utils/db");
 
 const express = require("express");
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 
 const app = express();
 
 app.use(express.json());
 
-app.use("/api/", require("./routes"));
+app.use("/api/", require("./routes/index"));
 
 //catch all middleware/route
 app.use((error, req, res, next) => {
